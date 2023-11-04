@@ -1,6 +1,6 @@
 # Line Typing Punishment Site
-# <br/>
-# Website Link: **[linepunish.github.io](https://linepunish.github.io/)**
+<br/>
+Website Link: **[linepunish.github.io](https://linepunish.github.io/)**
 
 INSTRUCTIONS: 
 <br/>
@@ -14,8 +14,8 @@ Step 3:
 Type that sentence the number of times that you have specified and press Enter or click the Enter button.
 After you have completed the task the following text will be displayed:
 "Well done! Your punishment is over."
- 
+<br/>
 Purpose:
 This website can be used to discipline kids, yourself, or persons you are taking care of.
-
+<br/>
 This website can be viewed on any device: laptop, smartphone, even e-readers, you name it!
