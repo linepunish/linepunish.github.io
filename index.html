@@ -1,0 +1,186 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Line punishment website">
+  <meta name="keywords" content="line punishment, line typing punishment, lines punishment, lines, punishment, online punishment, lines punish, punish, school punishment, punishment website, punishment site">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e0e0e0;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    #container {
+      width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    #text {
+      font-size: 20px;
+      color: #000;
+    }
+    #input {
+      width: 100%;
+      height: 40px;
+      font-size: 20px;
+      border: 1px solid #ccc;
+    }
+    #number {
+      width: 100%;
+      height: 40px;
+      font-size: 20px;
+      border: 1px solid #ccc;
+    }
+    #button1 {
+      width: 100%;
+      height: 40px;
+      font-size: 20px;
+      background-color: #00f;
+      color: #fff;
+    }
+    #button2 {
+      width: 100%;
+      height: 40px;
+      font-size: 20px;
+      background-color: #00f;
+      color: #fff;
+    }
+    #button3 {
+      width: 100%;
+      height: 40px;
+      font-size: 20px;
+      background-color: #00f;
+      color: #fff;
+    }
+    #box {
+      width: 100%;
+      height: 40px;
+      font-size: 20px;
+      border: 1px solid #ccc;
+    }
+    #result {
+      margin-top: 10px;
+      font-size: 18px;
+      color: #00f;
+    }
+  </style>
+</head>
+<body>
+  <h1>Line Typing Punishment</h1>
+  <div id="container">
+    <p id="text" style="font-size: x-large;">Type a sentence you want to repeat as punishment:</p>
+    <input id="input" type="text" placeholder="Type a sentence here"  onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
+    <button id="button1" onclick="lock1()">OK</button>
+    <p id="text" style="font-size: x-large;">How many times do you want to repeat it?</p>
+    <input id="number" type="number" placeholder="Type a number here"  onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
+    <button id="button2" onclick="lock()">OK</button>
+    <p id="text" style="font-size: x-large;">Type the sentence as many times as you specified:</p>
+    <input id="box" type="text" placeholder="Type here" onkeyup="enter(event)"  onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
+    <button id="button3" onclick="submit()">Enter</button>
+    <p id="result"></p>
+  </div>
+  <script>
+    var input = document.getElementById("input");
+    var number = document.getElementById("number");
+    var box = document.getElementById("box");
+    var button = document.getElementById("button");
+    var result = document.getElementById("result");
+
+    var count = 0;
+
+    function lock() {
+
+      number.disabled = true;
+      number.style.backgroundColor = "#ccc";
+      
+      result.innerHTML = "";
+      
+      box.focus();
+      removeButton2();
+    }
+
+    function lock1() {
+
+      input.disabled = true;
+      input.style.backgroundColor = "#ccc";
+      
+      result.innerHTML = "";
+      
+      box.focus();
+      removeButton1();
+    }
+
+    function lock2() {
+
+      box.disabled = true;
+      box.style.backgroundColor = "#ccc";
+      
+
+      box.innerHTML = "";
+      
+
+      box.focus();
+      
+    }
+
+    function removeButton1() {
+ var elem = document.getElementById('button1');
+ elem.parentNode.removeChild(elem);
+}
+    
+function removeButton2() {
+ var elem = document.getElementById('button2');
+ elem.parentNode.removeChild(elem);
+}
+    
+function removeButton3() {
+ var elem = document.getElementById('button3');
+ elem.parentNode.removeChild(elem);
+}
+
+    function enter(event) {
+
+      if (event.keyCode == 13) {
+        submit();
+      }
+    }
+
+
+    function submit() {
+
+      var sentence = input.value;
+      var num = number.value;
+      var value = box.value;
+
+
+      if (value == sentence) {
+
+        count++;
+        box.value = "";
+
+ 
+        if (count == num) {
+          result.innerHTML = "Well done! Your punishment is over.";
+          result.style.color = "#000"; result.style.fontSize = "xx-large";
+          lock2();
+          removeButton3();
+        } else {
+
+          result.innerHTML = "You have typed the sentence " + count + " times. Keep going!";
+          result.style.color = "#00f"; result.style.fontSize = "x-large";
+        }
+      } else {
+
+        result.innerHTML = "Wrong! You have to type the sentence exactly as shown.";
+        result.style.color = "#f00";  result.style.fontSize = "x-large";
+      }
+    }
+  </script>
+</body>
+</html>
