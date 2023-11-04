@@ -1,5 +1,4 @@
 # Line Typing Punishment Site
-<br/>
 Website Link: **[linepunish.github.io](https://linepunish.github.io/)**
 
 INSTRUCTIONS: 
