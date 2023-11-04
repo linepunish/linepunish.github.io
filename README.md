@@ -1,6 +1,6 @@
-<h3>Line Typing Punishment Site
+# Line Typing Punishment Site
 <br/>
-Website Link: **[linepunish.github.io](https://linepunish.github.io/)**
+# Website Link: **[linepunish.github.io](https://linepunish.github.io/)**
 
 INSTRUCTIONS: 
 <br/>
@@ -19,4 +19,3 @@ Purpose:
 This website can be used to discipline kids, yourself, or persons you are taking care of.
 
 This website can be viewed on any device: laptop, smartphone, even e-readers, you name it!
-</h3>
