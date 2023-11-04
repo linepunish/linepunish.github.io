@@ -1,10 +1,7 @@
-<h1>
-Line Typing Punishment Site
-Website Link: **[linepunish.github.io](https://linepunish.github.io/)**
-</h1>
+<h1>Line Typing Punishment Site
+Website Link: **[linepunish.github.io](https://linepunish.github.io/)**</h1>
 
-<h2>
-INSTRUCTIONS: 
+<h2>INSTRUCTIONS: 
 Step 1:
 Enter the sentence that you want to type several times in the first box and click the OK button.
 Step 2:
@@ -17,5 +14,4 @@ After you have completed the task the following text will be displayed:
 Purpose:
 This website can be used to discipline kids, yourself, or persons you are taking care of.
 
-This website can be viewed on any device: laptop, smartphone, even e-readers, you name it!
-</h2>
+This website can be viewed on any device: laptop, smartphone, even e-readers, you name it!</h2>
