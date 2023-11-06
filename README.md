@@ -17,4 +17,4 @@ After you have completed the task the following text will be displayed:
 Purpose:
 This website can be used to discipline kids, yourself, or persons you are taking care of.
 
-This website can be viewed on any device: laptop, smartphone, even e-readers, you name it!
+This website can be viewed on any device: laptops, smartphones, even e-readers, you name it!
