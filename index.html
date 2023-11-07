@@ -25,6 +25,16 @@
       background-color: #fff;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
+    #result1 {
+      font-size: large;
+      color: #f00;
+      font-size: x-large;
+    }
+    #result2 {
+      font-size: large;
+      color: #f00;
+      font-size: x-large;
+    }
     #text {
       text-align: center;
       font-size: 30px;
@@ -32,13 +42,13 @@
     }
     #input {
       width: 100%;
-      height: 60px;
+      height: 50px;
       font-size: 20px;
       border: 1px solid #ccc;
     }
     #number {
       width: 100%;
-      height: 40px;
+      height: 50px;
       font-size: 20px;
       border: 1px solid #ccc;
     }
@@ -65,7 +75,7 @@
     }
     #box {
       width: 100%;
-      height: 40px;
+      height: 50px;
       font-size: 20px;
       border: 1px solid #ccc;
     }
@@ -126,9 +136,11 @@
     <p id="text">Type a sentence you want to repeat as punishment:</p>
     <input id="input" type="text" placeholder="Type a sentence here"  onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
     <button id="button1" onclick="lock1()">OK</button>
+    <p id="result1"></p>
     <p id="text">How many times do you want to repeat it?</p>
     <input id="number" type="number" placeholder="Type a number here"  onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
     <button id="button2" onclick="lock()">OK</button>
+    <p id="result2"></p>
     <p id="text">Type the sentence as many times as you specified:</p>
     <input id="box" type="text" placeholder="Type here" onkeyup="enter(event)"  onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
     <button id="button3" onclick="submit()">Enter</button>
@@ -150,7 +162,7 @@
     </br>
     Step 2: Enter the number of times you want to type it in the second box and click the OK button.
     </br>
-    Step 3: Type that sentence the number of times that you have specified and press Enter or click the Enter button. After you have completed the task the following text will be displayed: "Well done! Your punishment is over."
+    Step 3: Type that sentence the number of times that you have specified and press Enter or click the Enter button. After you have completed the task, the number of times you have typed the text will be displayed.
     </br>
     </br>
     Purpose: This website can be used to discipline kids, yourself, or persons you are taking care of.
@@ -167,25 +179,39 @@
     var count = 0;
 
     function lock() {
-
+      var value2 = number.value;
+      if (value2 == "")
+      {
+        result2.innerHTML = "Please enter a number!";
+        return;
+      }
+      else {
       number.disabled = true;
       number.style.backgroundColor = "#ccc";
-      
+      result2.innerHTML = "";
       result.innerHTML = "";
       
       box.focus();
       removeButton2();
     }
+  }
 
     function lock1() {
-
+      var value1 = input.value;
+      if (value1 == "")
+      {
+        result1.innerHTML = "Please enter a sentence!";
+        return;
+      }
+      else {
       input.disabled = true;
       input.style.backgroundColor = "#ccc";
-      
+      result1.innerHTML = "";
       result.innerHTML = "";
       
       box.focus();
       removeButton1();
+      }
     }
 
     function lock2() {
@@ -230,7 +256,12 @@ function removeButton3() {
       var num = number.value;
       var value = box.value;
 
-
+      if (value == "") {
+        result.innerHTML = "Please type the sentence!";
+        result.style.color = "#f00";
+        result.style.fontSize = "x-large";
+      }
+      else {
       if (value == sentence) {
 
         count++;
@@ -238,8 +269,8 @@ function removeButton3() {
 
  
         if (count == num) {
-          result.innerHTML = "Well done! Your punishment is over.";
-          result.style.color = "#000"; result.style.fontSize = "xx-large";
+          result.innerHTML = "Your punishment is over. You have typed  the sentence '" + sentence + "' " + count + " times.";
+          result.style.color = "#000"; result.style.fontSize = "x-large";
           lock2();
           removeButton3();
         } else {
@@ -253,6 +284,7 @@ function removeButton3() {
         result.style.color = "#f00";  result.style.fontSize = "x-large";
       }
     }
+  }
   </script>
 </body>
 </html>
