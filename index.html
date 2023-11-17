@@ -278,8 +278,8 @@ function removeButton3() {
           lock2();
           removeButton3();
         } else {
-
-          result.innerHTML = "You have typed the sentence '" + sentence + "' " + count + " times. Keep going!";
+          var sentence1 = String(sentence);
+          result.innerHTML = "You have typed the sentence '" + sentence1 + "' " + count + " times. Keep going!";
           result.style.color = "#00f"; result.style.fontSize = "x-large";
         }
       } else {
