@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Lines Writing Punishment</title>
+  <title>Lines Writing Punishment!</title>
   <link rel="canonical" href="https://linepunish.github.io" >
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,7 +39,7 @@
       color: #f00;
       font-size: x-large;
     }
-    #text {
+    .text {
       text-align: center;
       font-size: 30px;
       color: #000;
@@ -96,10 +96,10 @@
       font-size: x-large;
       background-color:antiquewhite;
     }
-    @media only screen and (max-device-width: 480px) {
+    @media only screen and (max-width: 480px) {
       #container {
         width:90%;
-        align-self: 50px;
+        align-self: center;
       }
       #para {
       width:100%;
@@ -135,42 +135,42 @@
   </style>
 </head>
 <body>
-  <h1>Lines Writing Punishment</h1>
+  <h1>Lines Writing Punishment!</h1>
   <div id="container">
-    <p id="text">Type a sentence you want to repeat as punishment:</p>
-    <input id="input" type="text" placeholder="Type a sentence here"  onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
+    <p class="text">Type a sentence you want to repeat as punishment:</p>
+    <input id="input" type="text" placeholder="Type a sentence here" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
     <button id="button1" onclick="lock1()">OK</button>
     <p id="result1"></p>
-    <p id="text">How many times do you want to repeat it?</p>
-    <input id="number" type="number" placeholder="Type a number here"  onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
+    <p class="text">How many times do you want to repeat it?</p>
+    <input id="number" type="number" placeholder="Type a number here" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
     <button id="button2" onclick="lock()">OK</button>
     <p id="result2"></p>
-    <p id="text">Type the sentence as many times as you specified:</p>
-    <input id="box" type="text" placeholder="Type here" onkeyup="enter(event)"  onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
+    <p class="text">Type the sentence as many times as you specified:</p>
+    <input id="box" type="text" placeholder="Type here" onkeyup="enter(event)" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
     <button id="button3" onclick="submit()">Enter</button>
     <p id="result"></p>
   </div>
   <p id="para">
     Have you ever had to write lines as punishment? 
-    </br>
+    <br>
     This is a simple line typing punishment website. 
-   </br>
+   <br>
     It simulates a traditional punishment given to students. 
-    </br>
+    <br>
     You have to enter a sentence, enter the number of times you have to type it, and then type that sentence over and over again for the required number of times.
-    </br>
-    </br>
+    <br>
+    <br>
     INSTRUCTIONS:
-    </br>
+    <br>
     Step 1: Enter the sentence that you want to type several times in the first box and click the OK button.
-    </br>
+    <br>
     Step 2: Enter the number of times you want to type it in the second box and click the OK button.
-    </br>
+    <br>
     Step 3: Type that sentence the number of times that you have specified and press Enter or click the Enter button. After you have completed the task, the number of times you have typed the text will be displayed.
-    </br>
-    </br>
+    <br>
+    <br>
     Purpose: This website can be used to discipline kids, yourself, or persons you are taking care of.
-    </br>
+    <br>
     This website can be displayed on any device: laptops, smartphones, even e-readers, you name it!
   </p>
   <script>
