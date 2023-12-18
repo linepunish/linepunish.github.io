@@ -1,294 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Lines Writing Punishment</title>
-  <link rel="canonical" href="https://linepunish.github.io" >
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Have you ever had to write lines as punishment? This is a simple line typing punishment website. It simulates a traditional punishment given to students.">
-  <meta name="keywords" content="line punishment, writing lines as punishment, writing as punishment, line writing punishment,lines typing punishment, lines writing punishment, line typing punishment, lines punishment, lines punish, writing punishment, typing punishment">
-  <meta name="google-site-verification" content="google8c12906dc44fd102.html">
-  <style>
-    body {
-      margin: auto;
-      width: 100%;
-      overflow-wrap: break-word;
-      font-family: Arial, sans-serif;
-      background-color: #e0e0e0;
-    }
-    h1 {
-      margin-top: 20px;
-      font-size: xx-large;
-      text-align: center;
-      color: #333;
-    }
-    #container {
-      margin: 0 auto;
-      padding: 20px;
-      border: 1px solid #ccc;
-      background-color: #fff;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    #result1 {
-      font-size: large;
-      color: #f00;
-      font-size: x-large;
-    }
-    #result2 {
-      font-size: large;
-      color: #f00;
-      font-size: x-large;
-    }
-    .text {
-      text-align: center;
-      font-size: 30px;
-      color: #000;
-    }
-    #input {
-      width: 100%;
-      height: 70px;
-      font-size: 30px;
-      border: 1px solid #ccc;
-    }
-    #number {
-      width: 100%;
-      height: 70px;
-      font-size: 30px;
-      border: 1px solid #ccc;
-    }
-    #button1 {
-      width: 100%;
-      height: 40px;
-      font-size: 20px;
-      background-color: #00f;
-      color: #fff;
-    }
-    #button2 {
-      width: 100%;
-      height: 40px;
-      font-size: 20px;
-      background-color: #00f;
-      color: #fff;
-    }
-    #button3 {
-      width: 100%;
-      height: 40px;
-      font-size: 20px;
-      background-color: #00f;
-      color: #fff;
-    }
-    #box {
-      width: 100%;
-      height: 70px;
-      font-size: 30px;
-      border: 1px solid #ccc;
-    }
-    #result {
-      margin-top: 10px;
-      font-size: 18px;
-      color: #00f;
-    }
-    #para {
-      width:100%;
-      text-align: center;
-      overflow-wrap: break-word;
-      color:midnightblue;
-      font-size: x-large;
-      background-color:antiquewhite;
-    }
-    @media only screen and (max-device-width: 480px) {
+  <head>
+    <title>Lines Writing Punishment!</title>
+    <link rel="canonical" href="https://linepunish.github.io">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Have you ever had to write lines as punishment? This is a simple line typing punishment website. It simulates a traditional punishment given to students.">
+    <meta name="keywords" content="line punishment, writing lines as punishment, writing as punishment, line writing punishment,lines typing punishment, lines writing punishment, line typing punishment, lines punishment, lines punish, writing punishment, typing punishment">
+    <meta name="google-site-verification" content="google8c12906dc44fd102.html">
+    <style>
+      body {
+        margin: auto;
+        width: 100%;
+        overflow-wrap: break-word;
+        font-family: Arial, sans-serif;
+        background-color: #e0e0e0;
+      }
+
+      h1 {
+        margin-top: 20px;
+        font-size: xx-large;
+        text-align: center;
+        color: #333;
+      }
+
       #container {
-        width:90%;
-        align-self: center;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       }
+
+      #result1 {
+        font-size: large;
+        color: #f00;
+        font-size: x-large;
+      }
+
+      #result2 {
+        font-size: large;
+        color: #f00;
+        font-size: x-large;
+      }
+
+      .text {
+        text-align: center;
+        font-size: 30px;
+        color: #000;
+      }
+
+      #input {
+        width: 100%;
+        height: 70px;
+        font-size: 30px;
+        border: 1px solid #ccc;
+      }
+
+      #number {
+        width: 100%;
+        height: 70px;
+        font-size: 30px;
+        border: 1px solid #ccc;
+      }
+
+      #button1 {
+        width: 100%;
+        height: 40px;
+        font-size: 20px;
+        background-color: #00f;
+        color: #fff;
+      }
+
+      #button2 {
+        width: 100%;
+        height: 40px;
+        font-size: 20px;
+        background-color: #00f;
+        color: #fff;
+      }
+
+      #button3 {
+        width: 100%;
+        height: 40px;
+        font-size: 20px;
+        background-color: #00f;
+        color: #fff;
+      }
+
+      #box {
+        width: 100%;
+        height: 70px;
+        font-size: 30px;
+        border: 1px solid #ccc;
+      }
+
+      #result {
+        margin-top: 10px;
+        font-size: 18px;
+        color: #00f;
+      }
+
       #para {
-      width:100%;
-      margin-left: auto;
-      margin-right: auto;
-      overflow-wrap: break-word;
-      color:midnightblue;
-      font-size: x-large;
-      background-color:antiquewhite;
-    }
-    h1 {
-      padding-top: 15px;
-      font-size: xx-large;
-      text-align: center;
-      color: #333;
-    }
-  #text {
-      font-size: 25px;
-      color: #000;
-    }
-    #number, #input, #box {
-      font-size: xx-large;
-    }
-    body {
-      margin-left: auto;
-      margin-right: auto;
-      width: fit-content;
-      overflow-wrap: break-word;
-      font-family: Arial, sans-serif;
-      background-color: #e0e0e0;
-    }
-  }
-  </style>
-</head>
-<body>
-  <h1>Lines Writing Punishment</h1>
-  <div id="container">
-    <p class="text">Type a sentence you want to repeat as punishment:</p>
-    <input id="input" type="text" placeholder="Type a sentence here" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
-    <button id="button1" onclick="lock1()">OK</button>
-    <p id="result1"></p>
-    <p class="text">How many times do you want to repeat it?</p>
-    <input id="number" type="number" placeholder="Type a number here" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
-    <button id="button2" onclick="lock()">OK</button>
-    <p id="result2"></p>
-    <p class="text">Type the sentence as many times as you specified:</p>
-    <input id="box" type="text" placeholder="Type here" onkeyup="enter(event)" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
-    <button id="button3" onclick="submit()">Enter</button>
-    <p id="result"></p>
-  </div>
-  <p id="para">
-    Have you ever had to write lines as punishment? 
-    <br>
-    This is a simple line typing punishment website. 
-   <br>
-    It simulates a traditional punishment given to students. 
-    <br>
-    You have to enter a sentence, enter the number of times you have to type it, and then type that sentence over and over again for the required number of times.
-    <br>
-    <br>
-    INSTRUCTIONS:
-    <br>
-    Step 1: Enter the sentence that you want to type several times in the first box and click the OK button.
-    <br>
-    Step 2: Enter the number of times you want to type it in the second box and click the OK button.
-    <br>
-    Step 3: Type that sentence the number of times that you have specified and press Enter or click the Enter button. After you have completed the task, the number of times you have typed the text will be displayed.
-    <br>
-    <br>
-    Purpose: This website can be used to discipline kids, yourself, or persons you are taking care of.
-    <br>
-    This website can be displayed on any device: laptops, smartphones, even e-readers, you name it!
-  </p>
-  <script>
-    var input = document.getElementById("input");
-    var number = document.getElementById("number");
-    var box = document.getElementById("box");
-    var button = document.getElementById("button");
-    var result = document.getElementById("result");
-
-    var count = 0;
-
-    function lock() {
-      var value2 = number.value;
-      if (value2 == "")
-      {
-        result2.innerHTML = "Please enter a number!";
-        return;
+        width: 100%;
+        text-align: center;
+        overflow-wrap: break-word;
+        color: midnightblue;
+        font-size: x-large;
+        background-color: antiquewhite;
       }
-      else {
-      number.disabled = true;
-      number.style.backgroundColor = "#ccc";
-      result2.innerHTML = "";
-      result.innerHTML = "";
-      
-      box.focus();
-      removeButton2();
-    }
-  }
 
-    function lock1() {
-      var value1 = input.value;
-      if (value1 == "")
-      {
-        result1.innerHTML = "Please enter a sentence!";
-        return;
-      }
-      else {
-      input.disabled = true;
-      input.style.backgroundColor = "#ccc";
-      result1.innerHTML = "";
-      result.innerHTML = "";
-      
-      box.focus();
-      removeButton1();
-      }
-    }
-
-    function lock2() {
-
-      box.disabled = true;
-      box.style.backgroundColor = "#ccc";
-      
-
-      box.innerHTML = "";
-      
-
-      box.focus();
-      
-    }
-
-    function removeButton1() {
- var elem = document.getElementById('button1');
- elem.parentNode.removeChild(elem);
-}
-    
-function removeButton2() {
- var elem = document.getElementById('button2');
- elem.parentNode.removeChild(elem);
-}
-    
-function removeButton3() {
- var elem = document.getElementById('button3');
- elem.parentNode.removeChild(elem);
-}
-
-    function enter(event) {
-
-      if (event.keyCode == 13) {
-        submit();
-      }
-    }
-
-
-    function submit() {
-
-      var sentence = input.value;
-      var num = number.value;
-      var value = box.value;
-
-      if (value == "") {
-        result.innerHTML = "Please type the sentence!";
-        result.style.color = "#f00";
-        result.style.fontSize = "x-large";
-      }
-      else {
-      if (value == sentence) {
-
-        count++;
-        box.value = "";
-
- 
-        if (count == num) {
-          result.innerHTML = "Your punishment is over. You have typed  the sentence '" + sentence + "' " + count + " times.";
-          result.style.color = "#000"; result.style.fontSize = "x-large";
-          lock2();
-          removeButton3();
-        } else {
-          var sentence1 = String(sentence);
-          result.innerHTML = "You have typed the sentence '" + sentence1 + "' " + count + " times. Keep going!";
-          result.style.color = "#00f"; result.style.fontSize = "x-large";
+      @media only screen and (max-device-width: 480px) {
+        #container {
+          width: 90%;
+          align-self: center;
         }
-      } else {
 
-        result.innerHTML = "Wrong! You have to type the sentence exactly as shown.";
-        result.style.color = "#f00";  result.style.fontSize = "x-large";
+        #para {
+          width: 100%;
+          margin-left: auto;
+          margin-right: auto;
+          overflow-wrap: break-word;
+          color: midnightblue;
+          font-size: x-large;
+          background-color: antiquewhite;
+        }
+
+        h1 {
+          padding-top: 15px;
+          font-size: xx-large;
+          text-align: center;
+          color: #333;
+        }
+
+        #text {
+          font-size: 25px;
+          color: #000;
+        }
+
+        #number,
+        #input,
+        #box {
+          font-size: xx-large;
+        }
+
+        body {
+          margin-left: auto;
+          margin-right: auto;
+          width: fit-content;
+          overflow-wrap: break-word;
+          font-family: Arial, sans-serif;
+          background-color: #e0e0e0;
+        }
       }
-    }
-  }
-  </script>
-</body>
+    </style>
+  </head>
+  <body>
+    <h1>Lines Writing Punishment!</h1>
+    <div id="container">
+      <p class="text">Type a sentence you want to repeat as punishment:</p>
+      <input id="input" type="text" placeholder="Type a sentence here" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
+      <button id="button1" onclick="lock1()">OK</button>
+      <p id="result1"></p>
+      <p class="text">How many times do you want to repeat it?</p>
+      <input id="number" type="number" placeholder="Type a number here" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
+      <button id="button2" onclick="lock()">OK</button>
+      <p id="result2"></p>
+      <p class="text">Type the sentence as many times as you specified:</p>
+      <input id="box" type="text" placeholder="Type here" onkeyup="enter(event)" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
+      <button id="button3" onclick="submit()">Enter</button>
+      <p id="result"></p>
+    </div>
+    <p id="para"> Have you ever had to write lines as punishment? <br> This is a simple line typing punishment website. <br> It simulates a traditional punishment given to students. <br> You have to enter a sentence, enter the number of times you have to type it, and then type that sentence over and over again for the required number of times. <br>
+      <br> INSTRUCTIONS: <br> Step 1: Enter the sentence that you want to type several times in the first box and click the OK button. <br> Step 2: Enter the number of times you want to type it in the second box and click the OK button. <br> Step 3: Type that sentence the number of times that you have specified and press Enter or click the Enter button. After you have completed the task, the number of times you have typed the text will be displayed. <br>
+      <br> Purpose: This website can be used to correct your young ones, yourself, or persons you are taking care of. <br> This website can be displayed on any device: laptops, smartphones, even e-readers, you name it!
+    </p>
+    <script>
+      var input = document.getElementById("input");
+      var number = document.getElementById("number");
+      var box = document.getElementById("box");
+      var button = document.getElementById("button");
+      var result = document.getElementById("result");
+      var count = 0;
+
+      function lock() {
+        var value2 = number.value;
+        if (value2 == "") {
+          result2.innerHTML = "Please enter a number!";
+          return;
+        } else {
+          number.disabled = true;
+          number.style.backgroundColor = "#ccc";
+          result2.innerHTML = "";
+          result.innerHTML = "";
+          box.focus();
+          removeButton2();
+        }
+      }
+
+      function lock1() {
+        var value1 = input.value;
+        if (value1 == "") {
+          result1.innerHTML = "Please enter a sentence!";
+          return;
+        } else {
+          input.disabled = true;
+          input.style.backgroundColor = "#ccc";
+          result1.innerHTML = "";
+          result.innerHTML = "";
+          box.focus();
+          removeButton1();
+        }
+      }
+
+      function lock2() {
+        box.disabled = true;
+        box.style.backgroundColor = "#ccc";
+        box.innerHTML = "";
+        box.focus();
+      }
+
+      function removeButton1() {
+        var elem = document.getElementById('button1');
+        elem.parentNode.removeChild(elem);
+      }
+
+      function removeButton2() {
+        var elem = document.getElementById('button2');
+        elem.parentNode.removeChild(elem);
+      }
+
+      function removeButton3() {
+        var elem = document.getElementById('button3');
+        elem.parentNode.removeChild(elem);
+      }
+
+      function enter(event) {
+        if (event.keyCode == 13) {
+          submit();
+        }
+      }
+
+      function submit() {
+        var sentence = input.value;
+        var num = number.value;
+        var value = box.value;
+        if (value == "") {
+          result.innerHTML = "Please type the sentence!";
+          result.style.color = "#f00";
+          result.style.fontSize = "x-large";
+        } else {
+          if (value == sentence) {
+            count++;
+            box.value = "";
+            if (count == num) {
+              result.innerHTML = "Your punishment is over. You have typed  the sentence '" + sentence + "' " + count + " times.";
+              result.style.color = "#000";
+              result.style.fontSize = "x-large";
+              lock2();
+              removeButton3();
+            } else {
+              var sentence1 = String(sentence);
+              result.innerHTML = "You have typed the sentence '" + sentence1 + "' " + count + " times. Keep going!";
+              result.style.color = "#00f";
+              result.style.fontSize = "x-large";
+            }
+          } else {
+            result.innerHTML = "Wrong! You have to type the sentence exactly as shown.";
+            result.style.color = "#f00";
+            result.style.fontSize = "x-large";
+          }
+        }
+      }
+    </script>
+  </body>
 </html>
