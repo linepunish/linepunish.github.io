@@ -14,6 +14,6 @@ Type that sentence the number of times that you have specified and press Enter o
 After you have completed the task, the number of times you have typed the text will be displayed.
 
 Purpose:
-This website can be used to discipline kids, yourself, or persons you are taking care of.
+This website can be used to discipline your young ones, yourself, or persons you are taking care of.
 
 This website can be viewed on any device: laptops, smartphones, even e-readers, you name it!
