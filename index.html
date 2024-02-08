@@ -210,6 +210,7 @@
         var value2 = number.value;
         if (value2 == "") {
           result2.innerHTML = "Please enter a number!";
+          result2.style.fontWeight = "bolder";
           return;
         } else {
           number.disabled = true;
@@ -225,6 +226,7 @@
         var value1 = input.value;
         if (value1 == "") {
           result1.innerHTML = "Please enter a sentence!";
+          result1.style.fontWeight = "bolder";
           return;
         } else {
           input.disabled = true;
@@ -270,8 +272,9 @@
         var value = box.value;
         if (value == "") {
           result.innerHTML = "Please type the sentence!";
-          result.style.color = "#f00";
+          result.style.color = "rgb(75, 0, 130)";
           result.style.fontSize = "x-large";
+          result.style.fontWeight = "bolder";
         } else {
           if (value == sentence) {
             count++;
@@ -280,6 +283,7 @@
               result.innerHTML = "Your punishment is over. You have typed  the sentence '" + sentence + "' " + count + " times.";
               result.style.color = "#000";
               result.style.fontSize = "x-large";
+              result.style.fontWeight = "bolder";
               lock2();
               removeButton3();
             } else {
@@ -287,11 +291,13 @@
               result.innerHTML = "You have typed the sentence '" + sentence1 + "' " + count + " times. Keep going!";
               result.style.color = "#00f";
               result.style.fontSize = "x-large";
+              result.style.fontWeight = "bolder";
             }
           } else {
             result.innerHTML = "Wrong! You have to type the sentence exactly as shown.";
-            result.style.color = "#f00";
+            result.style.color = "rgb(75, 0, 130)";
             result.style.fontSize = "x-large";
+            result.style.fontWeight = "bolder";
           }
         }
       }
