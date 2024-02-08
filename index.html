@@ -190,127 +190,128 @@
     <h1>Lines Writing Punishment Online</h1>
     <div id="container">
       <p class="text">Type a sentence you want to repeat as punishment:</p>
-      <input id="input" type="text" placeholder="Type a sentence here" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
+      <input id="input" type="text" placeholder="Type a sentence here" onkeyup="enter1(event1)" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
       <button id="button1" onclick="lock1()">OK</button>
       <p id="result1"></p>
       <p class="text">How many times do you want to repeat it?</p>
-      <input id="number" type="number" placeholder="Type a number here" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
-      <button id="button2" onclick="lock()">OK</button>
+      <input id="number" type="number" placeholder="Type a number here" onkeyup="enter2(event2)" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
+      <button id="button2" onclick="lock2()">OK</button>
       <p id="result2"></p>
       <p class="text">Type the sentence as many times as you specified:</p>
-      <input id="box" type="text" placeholder="Type here" onkeyup="enter(event)" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
-      <button id="button3" onclick="submit()">Enter</button>
-      <p id="result"></p>
+      <input id="box" type="text" placeholder="Type here" onkeyup="enter3(event3)" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
+      <button id="button3" onclick="lock3()">Enter</button>
+      <p id="result3"></p>
     </div>
     <p id="para"> Have you ever had to write lines as punishment? <br> This is a simple line typing punishment website. <br> It simulates a traditional punishment given to students. <br> You have to enter a sentence, enter the number of times you have to type it, and then type that sentence over and over again for the required number of times. <br>
       <br> INSTRUCTIONS: <br> Step 1: Enter the sentence that you want to type several times in the first box and click the OK button. <br> Step 2: Enter the number of times you want to type it in the second box and click the OK button. <br> Step 3: Type that sentence the number of times that you have specified and press Enter or click the Enter button. After you have completed the task, the number of times you have typed the text will be displayed. <br>
       <br> Purpose: This website can be used to correct your young ones, yourself, or persons you are taking care of. <br> This website can be displayed on any device: laptops, smartphones, even e-readers, you name it!
     </p>
     <script>
-      var input = document.getElementById("input");
-      var number = document.getElementById("number");
-      var box = document.getElementById("box");
-      var button = document.getElementById("button");
-      var result = document.getElementById("result");
-      var count = 0;
+document.addEventListener("DOMContentLoaded", function () {
+  var input = document.getElementById("input");
+  var number = document.getElementById("number");
+  var box = document.getElementById("box");
+  var result1 = document.getElementById("result1");
+  var result2 = document.getElementById("result2");
+  var result3 = document.getElementById("result3");
+  var count = 0;
 
-      function lock() {
-        var value2 = number.value;
-        if (value2 == "") {
-          result2.innerHTML = "Please enter a number!";
-          result2.style.color = "rgb(75, 0, 130)";
-          result2.style.fontWeight = "bolder";
-          return;
-        } else {
-          number.disabled = true;
-          number.style.backgroundColor = "#ccc";
-          result2.innerHTML = "";
-          result.innerHTML = "";
-          box.focus();
-          removeButton2();
-        }
-      }
+  function lock1() {
+    var value1 = input.value.trim();
+    if (value1 === "") {
+      result1.innerHTML = "Please enter a sentence!";
+      result1.style.color = "rgb(75, 0, 130)";
+      result1.style.fontWeight = "bold";
+      return;
+    } else {
+      input.disabled = true;
+      input.style.backgroundColor = "#ccc";
+      result1.innerHTML = "";
+      input.focus();
+      removeButton("button1");
+    }
+  }
 
-      function lock1() {
-        var value1 = input.value;
-        if (value1 == "") {
-          result1.innerHTML = "Please enter a sentence!";
-          result1.style.color = "rgb(75, 0, 130)";
-          result1.style.fontWeight = "bolder";
-          return;
-        } else {
-          input.disabled = true;
-          input.style.backgroundColor = "#ccc";
-          result1.innerHTML = "";
-          result.innerHTML = "";
-          box.focus();
-          removeButton1();
-        }
-      }
+  function lock2() {
+    var value2 = number.value.trim();
+    if (value2 === "") {
+      result2.innerHTML = "Please enter a number!";
+      result2.style.color = "rgb(75, 0, 130)";
+      result2.style.fontWeight = "bold";
+      return;
+    } else {
+      number.disabled = true;
+      number.style.backgroundColor = "#ccc";
+      result1.innerHTML = "";
+      result2.innerHTML = "";
+      number.focus();
+      removeButton("button2");
+    }
+  }
 
-      function lock2() {
+  function lock3() {
+    var sentence = input.value.trim();
+    var num = parseInt(number.value.trim());
+    var value3 = box.value.trim();
+
+    if (value3 === "") {
+      result3.innerHTML = "Please type the sentence!";
+      result3.style.color = "rgb(75, 0, 130)";
+      result3.style.fontSize = "x-large";
+      result3.style.fontWeight = "bold";
+      return;
+    }
+
+    if (value3 === sentence) {
+      count++;
+      box.value = "";
+
+      if (count === num) {
+        result3.innerHTML = "Your punishment is over. You have typed the sentence '" + sentence + "' " + count + " times.";
+        result3.style.color = "#000";
+        result3.style.fontSize = "x-large";
+        result3.style.fontWeight = "bold";
         box.disabled = true;
         box.style.backgroundColor = "#ccc";
-        box.innerHTML = "";
-        box.focus();
+        removeButton("button3");
+      } else {
+        result3.innerHTML = "You have typed the sentence '" + sentence + "' " + count + " times. Keep going!";
+        result3.style.color = "#00f";
+        result3.style.fontSize = "x-large";
+        result3.style.fontWeight = "bold";
       }
+    } else {
+      result3.innerHTML = "Wrong! You have to type the sentence exactly as shown.";
+      result3.style.color = "rgb(75, 0, 130)";
+      result3.style.fontSize = "x-large";
+      result3.style.fontWeight = "bold";
+    }
+  }
 
-      function removeButton1() {
-        var elem = document.getElementById('button1');
-        elem.parentNode.removeChild(elem);
-      }
+  function removeButton(id) {
+    var elem = document.getElementById(id);
+    elem.parentNode.removeChild(elem);
+  }
 
-      function removeButton2() {
-        var elem = document.getElementById('button2');
-        elem.parentNode.removeChild(elem);
-      }
-
-      function removeButton3() {
-        var elem = document.getElementById('button3');
-        elem.parentNode.removeChild(elem);
-      }
-
-      function enter(event) {
-        if (event.keyCode == 13) {
-          submit();
-        }
-      }
-
-      function submit() {
-        var sentence = input.value;
-        var num = number.value;
-        var value = box.value;
-        if (value == "") {
-          result.innerHTML = "Please type the sentence!";
-          result.style.color = "rgb(75, 0, 130)";
-          result.style.fontSize = "x-large";
-          result.style.fontWeight = "bolder";
-        } else {
-          if (value == sentence) {
-            count++;
-            box.value = "";
-            if (count == num) {
-              result.innerHTML = "Your punishment is over. You have typed  the sentence '" + sentence + "' " + count + " times.";
-              result.style.color = "#000";
-              result.style.fontSize = "x-large";
-              result.style.fontWeight = "bolder";
-              lock2();
-              removeButton3();
-            } else {
-              var sentence1 = String(sentence);
-              result.innerHTML = "You have typed the sentence '" + sentence1 + "' " + count + " times. Keep going!";
-              result.style.color = "#00f";
-              result.style.fontSize = "x-large";
-              result.style.fontWeight = "bolder";
-            }
-          } else {
-            result.innerHTML = "Wrong! You have to type the sentence exactly as shown.";
-            result.style.color = "rgb(75, 0, 130)";
-            result.style.fontSize = "x-large";
-            result.style.fontWeight = "bolder";
-          }
-        }
-      }
+  document.getElementById("button1").addEventListener("click", lock1);
+  document.getElementById("button2").addEventListener("click", lock2);
+  document.getElementById("button3").addEventListener("click", lock3);
+  input.addEventListener("keyup", function(event) {
+    if (event.key === 'Enter') {
+      lock1();
+    }
+  });
+  number.addEventListener("keyup", function(event) {
+    if (event.key === 'Enter') {
+      lock2();
+    }
+  });
+  box.addEventListener("keyup", function(event) {
+    if (event.key === 'Enter') {
+      lock3();
+    }
+  });
+});
     </script>
   </body>
 </html>
