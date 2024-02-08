@@ -15,9 +15,13 @@
     <meta name="description" content="Have you ever had to write lines as punishment? This is a simple line typing punishment website. It simulates a traditional punishment given to students.">
     <meta name="keywords" content="line punishment, writing lines as punishment, writing as punishment, line writing punishment,lines typing punishment, lines writing punishment, line typing punishment, lines punishment, lines punish, writing punishment, typing punishment">
     <meta name="google-site-verification" content="google8c12906dc44fd102.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
     <style>
+
       body {
-        margin: auto;
+        background-image: url("wood.jpg");
         width: 100%;
         overflow-wrap: break-word;
         font-family: Arial, sans-serif;
@@ -25,18 +29,24 @@
       }
 
       h1 {
-        margin-top: 20px;
-        font-size: xx-large;
         text-align: center;
-        color: #333;
+        font-family: MedievalSharp;
+        margin-top: 20px;
+        font-size: 50px;
+        color: peachpuff;
+        text-shadow: 3px 3px 2px black;
       }
 
       #container {
+        width: 90%;
+        background-image: url("paperbrown.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
         margin: 0 auto;
         padding: 20px;
         border: 1px solid #ccc;
         background-color: #fff;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
       }
 
       #result1 {
@@ -52,6 +62,7 @@
       }
 
       .text {
+        font-weight: bolder;
         text-align: center;
         font-size: 30px;
         color: #000;
@@ -109,12 +120,18 @@
       }
 
       #para {
-        width: 100%;
+        background-image: url("paper.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
         text-align: center;
         overflow-wrap: break-word;
         color: midnightblue;
         font-size: x-large;
         background-color: antiquewhite;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
       }
 
       @media only screen and (max-device-width: 480px) {
@@ -134,10 +151,9 @@
         }
 
         h1 {
+          font-size: 35px;
           padding-top: 15px;
-          font-size: xx-large;
           text-align: center;
-          color: #333;
         }
 
         #text {
