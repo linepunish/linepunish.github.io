@@ -147,12 +147,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-      function Redirect {
-      let language = navigator.language;
-        if (language == 'bn')
-        {
-        window.location.replace("http://www.linepunish.github.io/bn/");
-        }
+    function Redirect() {
+    let language = navigator.language || navigator.userLanguage;
+    if (language && language.startsWith('bn')) {
+      window.location.replace("https://www.linepunish.github.io/bn/");
+    }
       }
     </script>
   </body>
