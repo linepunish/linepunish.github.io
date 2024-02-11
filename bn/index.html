@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function lock1() {
     var value1 = input.value.trim();
     if (value1 === "") {
-      result1.innerHTML = "Please enter a sentence!";
+      result1.innerHTML = "একটি বাক্য লিখুন!";
       result1.style.color = "rgb(75, 0, 130)";
       result1.style.fontWeight = "bold";
       return;
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function lock2() {
     var value2 = number.value.trim();
     if (value2 === "") {
-      result2.innerHTML = "Please enter a number!";
+      result2.innerHTML = "একটি নম্বর লিখুন!";
       result2.style.color = "rgb(75, 0, 130)";
       result2.style.fontWeight = "bold";
       return;
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var value3 = box.value.trim();
 
     if (value3 === "") {
-      result3.innerHTML = "Please type the sentence!";
+      result3.innerHTML = বাক্যটি টাইপ করুন!";
       result3.style.color = "rgb(75, 0, 130)";
       result3.style.fontSize = "x-large";
       result3.style.fontWeight = "bold";
@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
       box.value = "";
 
       if (count === num) {
-        result3.innerHTML = "Your punishment is over. You have typed the sentence '" + sentence + "' " + count + " times.";
+        result3.innerHTML = "আপনার শাস্তি শেষ। আপনি বাক্যটি টাইপ করেছেন '" + sentence + "' " + count + " বার।";
         result3.style.color = "#000";
         result3.style.fontSize = "x-large";
         result3.style.fontWeight = "bold";
@@ -105,13 +105,13 @@ document.addEventListener("DOMContentLoaded", function () {
         box.style.backgroundColor = "#ccc";
         removeButton("button3");
       } else {
-        result3.innerHTML = "You have typed the sentence '" + sentence + "' " + count + " times. Keep going!";
+        result3.innerHTML = "আপনি বাক্যটি টাইপ করেছেন '" + sentence + "' " + count + " বার। চোলতে থাকুন।";
         result3.style.color = "#00f";
         result3.style.fontSize = "x-large";
         result3.style.fontWeight = "bold";
       }
     } else {
-      result3.innerHTML = "Wrong! You have to type the sentence exactly as shown.";
+      result3.innerHTML = "ভুল! আপনি যেমন নির্দিষ্ট করেছেন তেমন হুবহু বাক্যটি টাইপ করতে হবে।;
       result3.style.color = "rgb(75, 0, 130)";
       result3.style.fontSize = "x-large";
       result3.style.fontWeight = "bold";
