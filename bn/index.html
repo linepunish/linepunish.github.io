@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="bn">
+  <head>
+    <title>লাইন লেখার শাস্তি</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="canonical" href="https://linepunish.github.io">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="শাস্তি হিসেবে আপনাকে কি বারবার একটি বাক্য লিখতে হয়েছে? এটি একটি লাইন লেখা শাস্তির ওয়েবসাইট। এই ওয়েবসাইটটি শিক্ষার্থীদের জন্য একটি শাস্তির অনুকরণ করে।">
+    <meta name="keywords" content="লাইন শাস্তি, শাস্তি হিসেবে লাইন লেখা, শাস্তি হিসেবে লেখা, লাইন লেখার শাস্তি, লাইন টাইপিং শাস্তি, লাইন লেখা শাস্তি, লাইনের শাস্তি, লেখার শাস্তি, টাইপিং শাস্তি">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <h1>লাইন লেখার শাস্তি</h1>
+    <div id="container">
+      <p class="text">একটি বাক্য লিখুন যেটা শাস্তি হিসাবে আপনি টাইপ করবেন:</p>
+      <input id="input" type="text" placeholder="এখানে একটি বাক্য লিখুন" onkeyup="enter1(event1)" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
+      <button id="button1" onclick="lock1()">OK</button>
+      <p id="result1"></p>
+      <p class="text">আপনি এই বাক্যটি কত বার টাইপ করতে চান?</p>
+      <input id="number" type="number" placeholder="এখানে একটি সংখ্যা লিখুন" onkeyup="enter2(event2)" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
+      <button id="button2" onclick="lock2()">OK</button>
+      <p id="result2"></p>
+      <p class="text">বাক্যটি যতবার আপনি উল্লেখ করেছেন ততবার টাইপ করুন:</p>
+      <input id="box" type="text" placeholder="এখানে লিখুন" onkeyup="enter3(event3)" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
+      <button id="button3" onclick="lock3()">Enter</button>
+      <p id="result3"></p>
+    </div>
+    <p id="para"> শাস্তি হিসেবে আপনাকে কি বারবার একটি বাক্য লিখতে হয়েছে? <br> এটি একটি লাইন লেখা শাস্তির ওয়েবসাইট। <br> এই ওয়েবসাইটটি শিক্ষার্থীদের জন্য একটি শাস্তির অনুকরণ করে। <br> আপনাকে একটি বাক্য লিখতে হবে, যতবার টাইপ করতে হবে তা লিখতে হবে এবং তারপর প্রয়োজনীয় সংখ্যক বার বারবার সেই বাক্যটি টাইপ করতে হবে। <br>
+      <br> নির্দেশ: <br> প্রথম ধাপ: আপনি যে বাক্যটি প্রথম বক্সে কয়েকবার টাইপ করতে চান সেটি লিখুন এবং OK বোতামে টিপুন। <br> দ্বিতীয় ধাপ: দ্বিতীয় বক্সে আপনি কতবার টাইপ করতে চান তা লিখুন এবং OK বোতামে টিপুন। <br> তৃতীয় ধাপ: আপনি যতবার নির্দিষ্ট করেছেন সেই বাক্যটি টাইপ করুন এবং Enter টিপুন। আপনি কাজটি শেষ করার পরে, আপনি কতবার বাক্যটি টাইপ করেছেন তা লেখা হয়ে যাবে। <br>
+      <br> উদ্দেশ্য: এই ওয়েবসাইটটি আপনার অল্পবয়সী, নিজেকে বা আপনি যাদের যত্ন নিচ্ছেন তাদের সংশোধন করতে ব্যবহার করা যেতে পারে। <br> এই ওয়েবসাইটটি যেকোনো ডিভাইসে ব্যবহার করা যেতে পারে: ল্যাপটপ, স্মার্টফোন, এমনকি ই-রিডার।
+    </p>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+  var input = document.getElementById("input");
+  var number = document.getElementById("number");
+  var box = document.getElementById("box");
+  var result1 = document.getElementById("result1");
+  var result2 = document.getElementById("result2");
+  var result3 = document.getElementById("result3");
+  var count = 0;
+
+  function lock1() {
+    var value1 = input.value.trim();
+    if (value1 === "") {
+      result1.innerHTML = "Please enter a sentence!";
+      result1.style.color = "rgb(75, 0, 130)";
+      result1.style.fontWeight = "bold";
+      return;
+    } else {
+      input.disabled = true;
+      input.style.backgroundColor = "#ccc";
+      result1.innerHTML = "";
+      input.focus();
+      removeButton("button1");
+    }
+  }
+
+  function lock2() {
+    var value2 = number.value.trim();
+    if (value2 === "") {
+      result2.innerHTML = "Please enter a number!";
+      result2.style.color = "rgb(75, 0, 130)";
+      result2.style.fontWeight = "bold";
+      return;
+    } else {
+      number.disabled = true;
+      number.style.backgroundColor = "#ccc";
+      result1.innerHTML = "";
+      result2.innerHTML = "";
+      number.focus();
+      removeButton("button2");
+    }
+  }
+
+  function lock3() {
+    var sentence = input.value.trim();
+    var num = parseInt(number.value.trim());
+    var value3 = box.value.trim();
+
+    if (value3 === "") {
+      result3.innerHTML = "Please type the sentence!";
+      result3.style.color = "rgb(75, 0, 130)";
+      result3.style.fontSize = "x-large";
+      result3.style.fontWeight = "bold";
+      return;
+    }
+
+    if (value3 === sentence) {
+      count++;
+      box.value = "";
+
+      if (count === num) {
+        result3.innerHTML = "Your punishment is over. You have typed the sentence '" + sentence + "' " + count + " times.";
+        result3.style.color = "#000";
+        result3.style.fontSize = "x-large";
+        result3.style.fontWeight = "bold";
+        box.disabled = true;
+        box.style.backgroundColor = "#ccc";
+        removeButton("button3");
+      } else {
+        result3.innerHTML = "You have typed the sentence '" + sentence + "' " + count + " times. Keep going!";
+        result3.style.color = "#00f";
+        result3.style.fontSize = "x-large";
+        result3.style.fontWeight = "bold";
+      }
+    } else {
+      result3.innerHTML = "Wrong! You have to type the sentence exactly as shown.";
+      result3.style.color = "rgb(75, 0, 130)";
+      result3.style.fontSize = "x-large";
+      result3.style.fontWeight = "bold";
+    }
+  }
+
+  function removeButton(id) {
+    var elem = document.getElementById(id);
+    elem.parentNode.removeChild(elem);
+  }
+
+  document.getElementById("button1").addEventListener("click", lock1);
+  document.getElementById("button2").addEventListener("click", lock2);
+  document.getElementById("button3").addEventListener("click", lock3);
+  input.addEventListener("keyup", function(event) {
+    if (event.key === 'Enter') {
+      lock1();
+    }
+  });
+  number.addEventListener("keyup", function(event) {
+    if (event.key === 'Enter') {
+      lock2();
+    }
+  });
+  box.addEventListener("keyup", function(event) {
+    if (event.key === 'Enter') {
+      lock3();
+    }
+  });
+});
+    </script>
+  </body>
+</html>
