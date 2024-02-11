@@ -21,7 +21,7 @@
     <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
-  <body onload="Redirect()">
+  <body>
     <h1>Lines Writing Punishment Online</h1>
     <div id="container">
       <p class="text">Type a sentence you want to repeat as punishment:</p>
@@ -41,7 +41,7 @@
       <br> INSTRUCTIONS: <br> Step 1: Enter the sentence that you want to type several times in the first box and click the OK button. <br> Step 2: Enter the number of times you want to type it in the second box and click the OK button. <br> Step 3: Type that sentence the number of times that you have specified and press Enter or click the Enter button. After you have completed the task, the number of times you have typed the text will be displayed. <br>
       <br> Purpose: This website can be used to correct your young ones, yourself, or persons you are taking care of. <br> This website can be displayed on any device: laptops, smartphones, even e-readers, you name it!
     </p>
-    <script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript">
+    <script>
 document.addEventListener("DOMContentLoaded", function () {
   var input = document.getElementById("input");
   var number = document.getElementById("number");
@@ -147,12 +147,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-      function Redirect() {
-      const city = geoplugin_city(); 
-      if (city === 'Kolkata') {
-        window.location.replace("https://linepunish.github.io/bn"); 
-      }
-    }
     </script>
   </body>
 </html>
