@@ -415,17 +415,17 @@ button {
 
 @media only screen and (min-device-width: 300px) and (max-device-width: 389px) {
   #About {
-    padding:15px 15px;
+    padding:10px 10px;
     margin-trim: all;
   }
   
   #Home {
-    padding:15px 15px;
+    padding:10px 10px;
     margin-trim: all;
   }
   
   #Language {
-    padding:15px 15px;
+    padding:10px 10px;
     margin-trim: all;
   }
 
