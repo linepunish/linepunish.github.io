@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Lines Writing Punishment Online</title>                                 
+    <title>Lines Writing Punishment Online</title>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -20,30 +20,28 @@
     <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
-
   <body>
-<div class="header">
-    <nav>
-  <div class="menu">
-    <div>
-      <button id="About" onclick="location.href='https://linepunish.github.io/about/'"><b>About Us</b></button>
-     </div>
-     &nbsp;&nbsp;&nbsp;&nbsp;
-    <div>
-      <button id="Home" onclick="location.href='https://linepunish.github.io/'"><b>Home</b></button>
-     </div>
-     &nbsp;&nbsp;&nbsp;&nbsp;
-  <div class="dropdown">
-    <button id="Language" class="langbutton"><b>Select Language</b></button>
-    <div class="dropdown-options">
-      <a href="https://linepunish.github.io/">English</a>
-      <a href="https://linepunish.github.io/bn/">বাংলা</a>
+    <div class="header">
+      <nav>
+        <div class="menu">
+          <a id="About" href="https://linepunish.github.io/about/">
+            <b>About Us</b>
+          </a> &nbsp;&nbsp;&nbsp;&nbsp; <div>
+            <button id="Home" onclick="location.href='https://linepunish.github.io/'">
+              <b>Home</b>
+            </button>
+          </div> &nbsp;&nbsp;&nbsp;&nbsp; <div class="dropdown">
+            <button id="Language" class="langbutton">
+              <b>Select Language</b>
+            </button>
+            <div class="dropdown-options">
+              <a href="https://linepunish.github.io/">English</a>
+              <a href="https://linepunish.github.io/bn/">বাংলা</a>
+            </div>
+          </div>
+        </div>
+      </nav>
     </div>
-  </div>
-</div>
-    </nav>
-  </div>
-    
     <h1>Lines Writing Punishment Online</h1>
     <div id="container">
       <p class="text">Type a sentence you want to repeat as punishment:</p>
@@ -64,111 +62,107 @@
       <br> Purpose: This website can be used to correct your young ones, yourself, or persons you are taking care of. <br> This website can be displayed on any device: laptops, smartphones, even e-readers, you name it!
     </p>
     <script>
-document.addEventListener("DOMContentLoaded", function () {
-  var input = document.getElementById("input");
-  var number = document.getElementById("number");
-  var box = document.getElementById("box");
-  var result1 = document.getElementById("result1");
-  var result2 = document.getElementById("result2");
-  var result3 = document.getElementById("result3");
-  var count = 0;
+      document.addEventListener("DOMContentLoaded", function() {
+        var input = document.getElementById("input");
+        var number = document.getElementById("number");
+        var box = document.getElementById("box");
+        var result1 = document.getElementById("result1");
+        var result2 = document.getElementById("result2");
+        var result3 = document.getElementById("result3");
+        var count = 0;
 
-  function lock1() {
-    var value1 = input.value.trim();
-    if (value1 === "") {
-      result1.innerHTML = "Please enter a sentence!";
-      result1.style.color = "rgb(75, 0, 130)";
-      result1.style.fontWeight = "bold";
-      return;
-    } else {
-      input.disabled = true;
-      input.style.backgroundColor = "#ccc";
-      result1.innerHTML = "";
-      input.focus();
-      removeButton("button1");
-    }
-  }
+        function lock1() {
+          var value1 = input.value.trim();
+          if (value1 === "") {
+            result1.innerHTML = "Please enter a sentence!";
+            result1.style.color = "rgb(75, 0, 130)";
+            result1.style.fontWeight = "bold";
+            return;
+          } else {
+            input.disabled = true;
+            input.style.backgroundColor = "#ccc";
+            result1.innerHTML = "";
+            input.focus();
+            removeButton("button1");
+          }
+        }
 
-  function lock2() {
-    var value2 = number.value.trim();
-    if (value2 === "") {
-      result2.innerHTML = "Please enter a number!";
-      result2.style.color = "rgb(75, 0, 130)";
-      result2.style.fontWeight = "bold";
-      return;
-    } else {
-      number.disabled = true;
-      number.style.backgroundColor = "#ccc";
-      result1.innerHTML = "";
-      result2.innerHTML = "";
-      number.focus();
-      removeButton("button2");
-    }
-  }
+        function lock2() {
+          var value2 = number.value.trim();
+          if (value2 === "") {
+            result2.innerHTML = "Please enter a number!";
+            result2.style.color = "rgb(75, 0, 130)";
+            result2.style.fontWeight = "bold";
+            return;
+          } else {
+            number.disabled = true;
+            number.style.backgroundColor = "#ccc";
+            result1.innerHTML = "";
+            result2.innerHTML = "";
+            number.focus();
+            removeButton("button2");
+          }
+        }
 
-  function lock3() {
-    var sentence = input.value.trim();
-    var num = parseInt(number.value.trim());
-    var value3 = box.value.trim();
+        function lock3() {
+          var sentence = input.value.trim();
+          var num = parseInt(number.value.trim());
+          var value3 = box.value.trim();
+          if (value3 === "") {
+            result3.innerHTML = "Please type the sentence!";
+            result3.style.color = "rgb(75, 0, 130)";
+            result3.style.fontSize = "x-large";
+            result3.style.fontWeight = "bold";
+            return;
+          }
+          if (value3 === sentence) {
+            count++;
+            box.value = "";
+            if (count === num) {
+              result3.innerHTML = "Your punishment is over. You have typed the sentence '" + sentence + "' " + count + " times.";
+              result3.style.color = "#000";
+              result3.style.fontSize = "x-large";
+              result3.style.fontWeight = "bold";
+              box.disabled = true;
+              box.style.backgroundColor = "#ccc";
+              removeButton("button3");
+            } else {
+              result3.innerHTML = "You have typed the sentence '" + sentence + "' " + count + " times. Keep going!";
+              result3.style.color = "#00f";
+              result3.style.fontSize = "x-large";
+              result3.style.fontWeight = "bold";
+            }
+          } else {
+            result3.innerHTML = "Wrong! You have to type the sentence exactly as shown.";
+            result3.style.color = "rgb(75, 0, 130)";
+            result3.style.fontSize = "x-large";
+            result3.style.fontWeight = "bold";
+          }
+        }
 
-    if (value3 === "") {
-      result3.innerHTML = "Please type the sentence!";
-      result3.style.color = "rgb(75, 0, 130)";
-      result3.style.fontSize = "x-large";
-      result3.style.fontWeight = "bold";
-      return;
-    }
-
-    if (value3 === sentence) {
-      count++;
-      box.value = "";
-
-      if (count === num) {
-        result3.innerHTML = "Your punishment is over. You have typed the sentence '" + sentence + "' " + count + " times.";
-        result3.style.color = "#000";
-        result3.style.fontSize = "x-large";
-        result3.style.fontWeight = "bold";
-        box.disabled = true;
-        box.style.backgroundColor = "#ccc";
-        removeButton("button3");
-      } else {
-        result3.innerHTML = "You have typed the sentence '" + sentence + "' " + count + " times. Keep going!";
-        result3.style.color = "#00f";
-        result3.style.fontSize = "x-large";
-        result3.style.fontWeight = "bold";
-      }
-    } else {
-      result3.innerHTML = "Wrong! You have to type the sentence exactly as shown.";
-      result3.style.color = "rgb(75, 0, 130)";
-      result3.style.fontSize = "x-large";
-      result3.style.fontWeight = "bold";
-    }
-  }
-
-  function removeButton(id) {
-    var elem = document.getElementById(id);
-    elem.parentNode.removeChild(elem);
-  }
-
-  document.getElementById("button1").addEventListener("click", lock1);
-  document.getElementById("button2").addEventListener("click", lock2);
-  document.getElementById("button3").addEventListener("click", lock3);
-  input.addEventListener("keyup", function(event) {
-    if (event.key === 'Enter') {
-      lock1();
-    }
-  });
-  number.addEventListener("keyup", function(event) {
-    if (event.key === 'Enter') {
-      lock2();
-    }
-  });
-  box.addEventListener("keyup", function(event) {
-    if (event.key === 'Enter') {
-      lock3();
-    }
-  });
-});
+        function removeButton(id) {
+          var elem = document.getElementById(id);
+          elem.parentNode.removeChild(elem);
+        }
+        document.getElementById("button1").addEventListener("click", lock1);
+        document.getElementById("button2").addEventListener("click", lock2);
+        document.getElementById("button3").addEventListener("click", lock3);
+        input.addEventListener("keyup", function(event) {
+          if (event.key === 'Enter') {
+            lock1();
+          }
+        });
+        number.addEventListener("keyup", function(event) {
+          if (event.key === 'Enter') {
+            lock2();
+          }
+        });
+        box.addEventListener("keyup", function(event) {
+          if (event.key === 'Enter') {
+            lock3();
+          }
+        });
+      });
     </script>
   </body>
 </html>
