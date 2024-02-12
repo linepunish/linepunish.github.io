@@ -53,6 +53,7 @@ button:hover{
 }
 
 .dropdown-options {
+  white-space: nowrap;
   display: none;
   position: absolute;
   overflow: auto;
@@ -67,6 +68,7 @@ button:hover{
 }
 
 .dropdown-options a {
+  width: auto;
   text-align: center;
   display: block;
   color: #000000;
@@ -354,10 +356,6 @@ button {
 
 @media only screen and (min-device-width: 270px) and (max-device-width: 300px) {
 
-  .dropdown-options a {
-    padding: 0px 0px;
-  }
-  
   #About {
     padding:0px 10px;
     margin-trim: all;
@@ -609,11 +607,12 @@ button {
   }
   
   .dropdown-options a {
-    text-align: center;
-    display: block;
-    color: #000000;
-    text-decoration: none;
-    padding:20px 40px;
+  width: auto;
+  text-align: center;
+  display: block;
+  color: #000000;
+  text-decoration: none;
+  padding:20px 40px;
   }
   
   .dropdown-options a:hover {
