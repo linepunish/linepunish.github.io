@@ -1,7 +1,7 @@
 html, body {width: auto!important; overflow-x: hidden!important} 
 
 body {
-  background-image: url("wood.jpg");
+  background-image: url("wood.webp");
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -21,7 +21,7 @@ h1 {
 
 #container {
   width: 90%;
-  background-image: url("paperbrown.jpg");
+  background-image: url("paperbrown.webp");
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0 auto;
@@ -108,7 +108,7 @@ h1 {
 }
 
 #para {
-  background-image: url("paper.jpg");
+  background-image: url("paper.webp");
   background-repeat: no-repeat;
   background-size: cover;
   width: 90%;
