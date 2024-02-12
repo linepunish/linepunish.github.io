@@ -35,16 +35,12 @@ h1 {
 
 button {
   border-radius:10px;
-  padding:15px 30px;
+  padding:20px 30px;
   font-size:18px;
   cursor:pointer;
   background-color: brown;
   color: gainsboro;
   box-shadow:0 0 15px #000;
-}
-
-.okbutton {
-  padding: 15px 30px;
 }
 
 .menu {
@@ -66,10 +62,12 @@ button:hover{
 }
 
 .dropdown:hover .dropdown-options {
+  width: 100%;
   display: block;
 }
 
 .dropdown-options a {
+  text-align: center;
   display: block;
   color: #000000;
   padding: 5px;
@@ -136,6 +134,7 @@ button:hover{
   height: 50px;
   font-size: 20px;
   color: gainsboro;
+  padding-top: 13px;
 }
 
 #button2 {
@@ -146,6 +145,7 @@ button:hover{
   height: 50px;
   font-size: 20px;
   color: gainsboro;
+  padding-top: 13px;
 }
 
 #button3 {
@@ -156,6 +156,19 @@ button:hover{
   height: 50px;
   font-size: 20px;
   color: gainsboro;
+  padding-top: 13px;
+}
+
+#About {
+  padding-top: 25px;
+}
+
+#Home {
+  padding-top: 25px;
+}
+
+#Language {
+  padding-top: 25px;
 }
 
 #box {
