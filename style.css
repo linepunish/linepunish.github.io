@@ -32,6 +32,7 @@ button {
   cursor:pointer;
   background-color: brown;
   color: gainsboro;
+  box-shadow:0 0 15px #000;
 }
 
 button:hover{
