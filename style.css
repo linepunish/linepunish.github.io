@@ -161,7 +161,7 @@ button:hover{
 #About {
   text-decoration: none;
   border-radius:10px;
-  padding:23px 30px;
+  padding:23px 25px;
   font-size:18px;
   cursor:pointer;
   background-color: brown;
@@ -172,7 +172,7 @@ button:hover{
 #Home {
   text-decoration: none;
   border-radius:10px;
-  padding:23px 30px;
+  padding:23px 25px;
   font-size:18px;
   cursor:pointer;
   background-color: brown;
@@ -183,7 +183,7 @@ button:hover{
 #Language {
   text-decoration: none;
   border-radius:10px;
-  padding:23px 30px;
+  padding:23px 25px;
   font-size:18px;
   cursor:pointer;
   background-color: brown;
