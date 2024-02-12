@@ -219,7 +219,20 @@ button:hover{
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-@media only screen and (max-device-width: 480px) {
+@media only screen and (max-device-width: 350px) and (max-device-width: 389px) {
+  #About {
+    padding:0px 0px;
+  }
+  
+  #Home {
+    padding:0px 0px;
+  }
+  
+  #Language {
+    padding:0px 0px;
+  }
+
+
   #container {
     width: 90%;
     align-self: center;
@@ -237,6 +250,51 @@ button:hover{
 button {
   padding: 20px 5px;
 }
+  
+  h1 {
+    font-size: 35px;
+    padding-top: 15px;
+    text-align: center;
+  }
+
+  #text {
+    font-size: 25px;
+    color: #000;
+  }
+
+  #number,
+  #input,
+  #box {
+    font-size: xx-large;
+  }
+
+  body {
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    overflow-wrap: break-word;
+    font-family: Arial, sans-serif;
+  }
+}
+
+@media only screen and (max-device-width: 389px) and (max-device-width: 480px) {
+  #container {
+    width: 90%;
+    align-self: center;
+  }
+
+  #para {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-wrap: break-word;
+    color: midnightblue;
+    font-size: x-large;
+  }
+
+  button {
+    padding: 20px 5px;
+  }
   
   h1 {
     font-size: 35px;
