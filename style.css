@@ -227,19 +227,16 @@ button:hover{
 @media only screen and (min-device-width: 150px) and (max-device-width: 205px) {
   #About {
     padding:0px 0px;
-    margin-trim: all;
     font-size: 12px;
   }
   
   #Home {
     padding:0px 0px;
-    margin-trim: all;
     font-size: 12px;
   }
   
   #Language {
     padding:0px 0px;
-    margin-trim: all;
     font-size: 12px;
   }
 
@@ -294,19 +291,16 @@ button {
 @media only screen and (min-device-width: 205px) and (max-device-width: 270px) {
   #About {
     padding:0px 5px;
-    margin-trim: all;
     font-size: 12px;
   }
   
   #Home {
     padding:0px 5px;
-    margin-trim: all;
     font-size: 12px;
   }
   
   #Language {
     padding:0px 5px;
-    margin-trim: all;
     font-size: 12px;
   }
 
@@ -358,17 +352,14 @@ button {
 
   #About {
     padding:0px 10px;
-    margin-trim: all;
   }
   
   #Home {
     padding:0px 10px;
-    margin-trim: all;
   }
   
   #Language {
     padding:0px 10px;
-    margin-trim: all;
   }
 
 
@@ -419,17 +410,14 @@ button {
 @media only screen and (min-device-width: 300px) and (max-device-width: 389px) {
   #About {
     padding:10px 10px;
-    margin-trim: all;
   }
   
   #Home {
     padding:10px 10px;
-    margin-trim: all;
   }
   
   #Language {
     padding:10px 10px;
-    margin-trim: all;
   }
 
 
@@ -485,17 +473,14 @@ button {
 
   #About {
     padding:17px 25px;
-    margin-trim: all;
   }
   
   #Home {
     padding:17px 25px;
-    margin-trim: all;
   }
   
   #Language {
     padding:23px 25px;
-    margin-trim: all;
   }
 
   #para {
