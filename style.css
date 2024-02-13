@@ -224,7 +224,7 @@ button:hover{
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-@media only screen and (min-device-width: 150px) and (max-device-width: 205px) {
+@media only screen and (min-width: 150px) and (max-width: 205px) {
   #About {
     padding:0px 0px;
     font-size: 12px;
@@ -288,7 +288,7 @@ button {
   }
 }
 
-@media only screen and (min-device-width: 205px) and (max-device-width: 270px) {
+@media only screen and (min-width: 205px) and (max-width: 270px) {
   #About {
     padding:0px 5px;
     font-size: 12px;
@@ -348,7 +348,7 @@ button {
   }
 }
 
-@media only screen and (min-device-width: 270px) and (max-device-width: 300px) {
+@media only screen and (min-width: 270px) and (max-width: 300px) {
 
   #About {
     padding:0px 10px;
@@ -407,7 +407,7 @@ button {
   }
 }
 
-@media only screen and (min-device-width: 300px) and (max-device-width: 389px) {
+@media only screen and (min-width: 300px) and (max-width: 389px) {
   #About {
     padding:10px 10px;
   }
@@ -465,7 +465,7 @@ button {
   }
 }
 
-@media only screen and (min-device-width: 389px) and (max-device-width: 480px) {
+@media only screen and (min-width: 389px) and (max-width: 480px) {
   #container {
     width: 90%;
     align-self: center;
@@ -522,7 +522,7 @@ button {
   }
 }
 
-@media only screen and (min-device-width: 480px) {
+@media only screen and (min-width: 480px) {
   html, body {width: auto!important; overflow-x: hidden!important} 
 
   body {
