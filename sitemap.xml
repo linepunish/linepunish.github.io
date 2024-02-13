@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-	<url>
-		<loc>https://linepunish.github.io/</loc>
-		<xhtml:link rel="canonical" href="https://linepunish.github.io/" />
-		<xhtml:link rel="alternate" hreflang="bn" href="https://linepunish.github.io/bn/" />
-	</url>
-	<url>
-		<loc>https://linepunish.github.io/bn/</loc>
-		<xhtml:link rel="canonical" href="https://linepunish.github.io/bn/" />
-		<xhtml:link rel="alternate" hreflang="en" href="https://linepunish.github.io/" />
-	</url>
-	<url>
-		<loc>https://linepunish.github.io/about/</loc>
-		<xhtml:link rel="canonical" href="https://linepunish.github.io/about/" />
-	</url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://linepunish.github.io/</loc>
+	<lastmod>2024-02-13</lastmod>
+	<changefreq>monthly</changefreq>
+        <xhtml:link rel="alternate" hreflang="bn" href="https://linepunish.github.io/bn/" />
+	<priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://linepunish.github.io/bn/</loc>
+	<lastmod>2024-02-13</lastmod>
+	<changefreq>monthly</changefreq>
+	<xhtml:link rel="alternate" hreflang="en" href="https://linepunish.github.io/" />
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://linepunish.github.io/about/</loc>
+	<lastmod>2024-02-13</lastmod>
+	<changefreq>yearly</changefreq>
+        <priority>0.1</priority>
+    </url>
 </urlset>
