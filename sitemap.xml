@@ -4,21 +4,21 @@
     <url>
         <loc>https://linepunish.github.io/</loc>
 	<lastmod>2024-02-13</lastmod>
-	<changefreq>monthly</changefreq>
+	<changefreq>weekly</changefreq>
         <xhtml:link rel="alternate" hreflang="bn" href="https://linepunish.github.io/bn/" />
 	<priority>1.0</priority>
     </url>
     <url>
         <loc>https://linepunish.github.io/bn/</loc>
 	<lastmod>2024-02-13</lastmod>
-	<changefreq>monthly</changefreq>
+	<changefreq>weekly</changefreq>
 	<xhtml:link rel="alternate" hreflang="en" href="https://linepunish.github.io/" />
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://linepunish.github.io/about/</loc>
 	<lastmod>2024-02-13</lastmod>
-	<changefreq>yearly</changefreq>
+	<changefreq>weekly</changefreq>
         <priority>0.1</priority>
     </url>
 </urlset>
