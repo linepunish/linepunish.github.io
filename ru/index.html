@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <title>Написание строк в качестве наказания</title>
+    <meta name="google" content="notranslate">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="Вы когда-нибудь подвергались наказанию, где вас заставляли много раз писать одно и то же? Этот вебсайт — простой для использования инструмент для наказания путём многократного написания предложений. Он симулирует данное традиционное наказание для учеников.">
+    <meta name="keywords" content="Написание строк, Написание строк в качестве наказания, написание предложений, написание предложений в качестве наказания, писать в качестве наказания">
+  </head>
+  <body>
+    <div class="header">
+      <nav>
+        <div class="menu">
+          <a id="About" href="https://linepunish.github.io/about/">
+            <b>About Us</b>
+          </a> &nbsp; <div>
+            <button id="Home" onclick="location.href='https://linepunish.github.io/'">
+              <b>Home</b>
+            </button>
+          </div> &nbsp; <div class="dropdown">
+            <button id="Language" class="langbutton">
+              <b>Select Language</b>
+            </button>
+            <div class="dropdown-options">
+              <a href="https://linepunish.github.io/">English</a>
+              <a href="https://linepunish.github.io/bn/">বাংলা</a>
+              <a href="https://linepunish.github.io/ru/">русский</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <h1>Написание строк в качестве наказания</h1>
+    <div id="container">
+      <p class="text">Перепечатайте предложение, которое вы хотите повторить в качестве наказания</p>
+      <input id="input" type="text" placeholder="Напишите здесь предложение" onkeyup="enter1(event1)" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
+      <button id="button1" onclick="lock1()">OK</button>
+      <p id="result1"></p>
+      <p class="text">Сколько раз вы хотите повторить это?</p>
+      <input id="number" type="number" placeholder="Введите число здесь" onkeyup="enter2(event2)" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
+      <button id="button2" onclick="lock2()">OK</button>
+      <p id="result2"></p>
+      <p class="text">Напишите предложение столько раз, сколько вы указали</p>
+      <input id="box" type="text" placeholder="Напишите здесь" onkeyup="enter3(event3)" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
+      <button id="button3" onclick="lock3()">Enter</button>
+      <p id="result3"></p>
+    </div>
+    
+    <br><br>
+    
+     <div id="para">
+       
+        <div style="text-align: center;">
+          Вы когда-нибудь подвергались наказанию, где вас заставляли много раз писать одно и то же? <br>
+          Этот вебсайт — простой для использования инструмент для наказания путём многократного написания предложений. <br>
+          Он симулирует данное традиционное наказание для учеников. <br>
+          Вам нужно ввести предложение, количество раз его написания и затем напечатать его столько раз, сколько указано.
+          <br>
+        </div>
+    
+        <div style="text-align: center; text-decoration: underline;">
+          <br>
+          ИНСТРУКЦИИ 
+          <br><br>
+        </div>
+
+        <div style="text-align: left;">
+          1: Введите предложение, которое нужно напечатать несколько раз, в первое окно и нажмите <b>ОК</b>.  <br><br>
+          2: Введите количество раз, сколько нужно напечатать предложение, во второе окно и нажмите <b>ОК</b>.
+          . <br><br>
+          3: Напечатайте предложение установленное количество раз и нажмите клавишу <b>Enter</b> либо кликните на кнопку <b>Enter</b> на экране. После выполнения задание сайт покажет, сколько раз вы написали предложение.
+          <br>
+        </div>
+    
+     <div style="text-align: center;">
+      <br>
+      Мы сделали этот вебсайт, чтобы облегчить процесс воспитания детей.
+      </div>
+       
+    </div>
+
+    <br>
+    
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var input = document.getElementById("input");
+        var number = document.getElementById("number");
+        var box = document.getElementById("box");
+        var result1 = document.getElementById("result1");
+        var result2 = document.getElementById("result2");
+        var result3 = document.getElementById("result3");
+        var count = 0;
+
+        function lock1() {
+          var value1 = input.value.trim();
+          if (value1 === "") {
+            result1.innerHTML = "Введите предложение!";
+            result1.style.color = "rgb(75, 0, 130)";
+            result1.style.fontWeight = "bold";
+            return;
+          } else {
+            input.disabled = true;
+            input.style.backgroundColor = "#ccc";
+            result1.innerHTML = "";
+            input.focus();
+            removeButton("button1");
+          }
+        }
+
+        function lock2() {
+          var value2 = number.value.trim();
+          if (value2 === "") {
+            result2.innerHTML = "Введите число!";
+            result2.style.color = "rgb(75, 0, 130)";
+            result2.style.fontWeight = "bold";
+            return;
+          } else {
+            number.disabled = true;
+            number.style.backgroundColor = "#ccc";
+            result1.innerHTML = "";
+            result2.innerHTML = "";
+            number.focus();
+            removeButton("button2");
+          }
+        }
+
+        function lock3() {
+          var sentence = input.value.trim();
+          var num = parseInt(number.value.trim());
+          var value3 = box.value.trim();
+          if (value3 === "") {
+            result3.innerHTML = "Введите предложение!";
+            result3.style.color = "rgb(75, 0, 130)";
+            result3.style.fontSize = "x-large";
+            result3.style.fontWeight = "bold";
+            return;
+          }
+          if (value3 === sentence) {
+            count++;
+            box.value = "";
+            if (count === num) {
+              result3.innerHTML = "Ваше наказание закончено. Вы ввели предложение '" + sentence + "' " + count + " раз.";
+              result3.style.color = "#000";
+              result3.style.fontSize = "x-large";
+              result3.style.fontWeight = "bold";
+              var p = document.createElement("p");
+              p.innerHTML = sentence;
+              var boxElement = document.getElementById("box");
+              boxElement.placeholder = sentence;
+              box.disabled = true;
+              box.style.backgroundColor = "#ccc";
+              removeButton("button3");
+            } else {
+              result3.innerHTML = "Вы ввели предложение '" + sentence + "' " + count + " раз. Продолжайте в том же духе!";
+              result3.style.color = "#00f";
+              result3.style.fontSize = "x-large";
+              result3.style.fontWeight = "bold";
+            }
+          } else {
+            result3.innerHTML = "Неправильно! Вы должны ввести предложение точно так, как показано.";
+            result3.style.color = "rgb(75, 0, 130)";
+            result3.style.fontSize = "x-large";
+            result3.style.fontWeight = "bold";
+          }
+        }
+
+        function removeButton(id) {
+          var elem = document.getElementById(id);
+          elem.parentNode.removeChild(elem);
+        }
+        document.getElementById("button1").addEventListener("click", lock1);
+        document.getElementById("button2").addEventListener("click", lock2);
+        document.getElementById("button3").addEventListener("click", lock3);
+        input.addEventListener("keyup", function(event) {
+          if (event.key === 'Enter') {
+            lock1();
+          }
+        });
+        number.addEventListener("keyup", function(event) {
+          if (event.key === 'Enter') {
+            lock2();
+          }
+        });
+        box.addEventListener("keyup", function(event) {
+          if (event.key === 'Enter') {
+            lock3();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
