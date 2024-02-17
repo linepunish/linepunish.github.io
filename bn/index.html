@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="bn">
   <head>
+    <meta name="google" content="notranslate">
     <title>লাইন লেখা শাস্তি</title>
-    <meta name="google" value="notranslate" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -45,7 +45,7 @@
       <button id="button1" onclick="lock1()">OK</button>
       <p id="result1"></p>
       <p class="text">আপনি এই বাক্যটি কত বার টাইপ করতে চান?</p>
-      <input id="number" type="number" placeholder="এখানে একটি সংখ্যা লিখুন" onkeyup="enter2(event2)" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
+      <input id="number" type="text" oninput="validateInput(event);" placeholder="এখানে একটি সংখ্যা লিখুন" onkeyup="enter2(event2)" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
       <button id="button2" onclick="lock2()">OK</button>
       <p id="result2"></p>
       <p class="text">বাক্যটি যতবার আপনি উল্লেখ করেছেন ততবার টাইপ করুন:</p>
@@ -53,42 +53,53 @@
       <button id="button3" onclick="lock3()">Enter</button>
       <p id="result3"></p>
     </div>
-    
-    <br><br>
-    
-     <div id="para">
-       
-        <div style="text-align: center;">
-          শাস্তি হিসেবে আপনাকে কি কখনো একটি বাক্য অনেক বার লিখতে হয়েছে? <br>
-          এটি একটি লাইন লেখা শাস্তির ওয়েবসাইট। <br>
-          এই ওয়েবসাইটটি শিক্ষার্থীদের জন্য একটি শাস্তির অনুকরণ করে। <br>
-         আপনাকে একটি বাক্য লিখতে হবে, যতবার টাইপ করতে হবে তা লিখতে হবে এবং তারপর প্রয়োজনীয় সংখ্যক বার বারবার সেই বাক্যটি টাইপ করতে হবে।
-          <br>
-        </div>
-    
-        <div style="text-align: center; text-decoration: underline;">
-          <br>
-          নির্দেশ 
-          <br><br>
-        </div>
-
-        <div style="text-align: left;">
-          ১: আপনি যে বাক্যটি প্রথম বক্সে কয়েকবার টাইপ করতে চান সেটি লিখুন এবং <b>OK</b> বোতামে টিপুন।  <br><br>
-          ২: দ্বিতীয় বক্সে আপনি কতবার টাইপ করতে চান তা লিখুন এবং <b>OK</b> বোতামে টিপুন। <br><br>
-          ৩: আপনি যতবার নির্দিষ্ট করেছেন সেই বাক্যটি টাইপ করুন এবং <b>Enter</b> টিপুন। আপনি কাজটি শেষ করার পরে, আপনি কতবার বাক্যটি টাইপ করেছেন তা লেখা হয়ে যাবে।
-          <br>
-        </div>
-    
-     <div style="text-align: center;">
-      <br>
-       এই ওয়েবসাইটটি আপনার অল্পবয়সী, নিজেকে বা আপনি যাদের যত্ন নিচ্ছেন তাদের সংশোধন করতে ব্যবহার করা যেতে পারে।
-      </div>
-       
-    </div>
-
     <br>
-    
+    <br>
+    <div id="para">
+      <div style="text-align: center;"> শাস্তি হিসেবে আপনাকে কি কখনো একটি বাক্য অনেক বার লিখতে হয়েছে? <br> এটি একটি লাইন লেখা শাস্তির ওয়েবসাইট। <br> এই ওয়েবসাইটটি শিক্ষার্থীদের জন্য একটি শাস্তির অনুকরণ করে। <br> আপনাকে একটি বাক্য লিখতে হবে, যতবার টাইপ করতে হবে তা লিখতে হবে এবং তারপর প্রয়োজনীয় সংখ্যক বার বারবার সেই বাক্যটি টাইপ করতে হবে। <br>
+      </div>
+      <div style="text-align: center; text-decoration: underline;">
+        <br> নির্দেশ <br>
+        <br>
+      </div>
+      <div style="text-align: left;"> ১: আপনি যে বাক্যটি প্রথম বক্সে কয়েকবার টাইপ করতে চান সেটি লিখুন এবং <b>OK</b> বোতামে টিপুন। <br>
+        <br> ২: দ্বিতীয় বক্সে আপনি কতবার টাইপ করতে চান তা লিখুন এবং <b>OK</b> বোতামে টিপুন। <br>
+        <br> ৩: আপনি যতবার নির্দিষ্ট করেছেন সেই বাক্যটি টাইপ করুন এবং <b>Enter</b> টিপুন। আপনি কাজটি শেষ করার পরে, আপনি কতবার কথাটি টাইপ করেছেন তা লেখা হবে। <br>
+      </div>
+      <div style="text-align: center;">
+        <br> এই ওয়েবসাইটটি আপনার অল্পবয়সী, নিজেকে বা আপনি যাদের যত্ন নিচ্ছেন তাদের সংশোধন করতে ব্যবহার করা যেতে পারে।
+      </div>
+    </div>
+    <br>
     <script>
+      function convertBengaliToArabic(bengaliNumber) {
+        const bengaliToArabicMap = {
+          '০': '0',
+          '১': '1',
+          '২': '2',
+          '৩': '3',
+          '৪': '4',
+          '৫': '5',
+          '৬': '6',
+          '৭': '7',
+          '৮': '8',
+          '৯': '9'
+        };
+        let arabicNumber = '';
+        for (let i = 0; i < bengaliNumber.length; i++) {
+          const char = bengaliNumber.charAt(i);
+          arabicNumber += bengaliToArabicMap[char] || char;
+        }
+        return arabicNumber;
+      }
+
+      function validateInput(event) {
+        var input = event.target.value;
+        var numeralsRegex = /^[\d\u09E6-\u09EF]+$/;
+        if (!input.match(numeralsRegex)) {
+          event.target.value = input.replace(/[^\d\u09E6-\u09EF]/g, '');
+        }
+      }
       document.addEventListener("DOMContentLoaded", function() {
         var input = document.getElementById("input");
         var number = document.getElementById("number");
@@ -132,9 +143,9 @@
         }
 
         function lock3() {
-          var sentence = input.value.trim();
-          var num = parseInt(number.value.trim());
-          var value3 = box.value.trim();
+          var sentence = input.value;
+          var num = parseInt(convertBengaliToArabic(number.value.trim()));
+          var value3 = box.value;
           if (value3 === "") {
             result3.innerHTML = "বাক্যটি টাইপ করুন!";
             result3.style.color = "rgb(75, 0, 130)";
@@ -145,7 +156,7 @@
           if (value3 === sentence) {
             count++;
             box.value = "";
-            if (count === num) {
+            if ((count === num)) {
               result3.innerHTML = "আপনার শাস্তি শেষ। আপনি বাক্যটি টাইপ করেছেন '" + sentence + "' " + count.toLocaleString("bn") + " বার।";
               result3.style.color = "#000";
               result3.style.fontSize = "x-large";
