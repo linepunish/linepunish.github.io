@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <title>Lines Writing Punishment Online</title>
-    <meta name="google" value="notranslate" />
+    <meta name="google" content="notranslate">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -155,9 +155,13 @@
               result3.style.color = "#000";
               result3.style.fontSize = "x-large";
               result3.style.fontWeight = "bold";
-              box.disabled = true;
               box.style.backgroundColor = "#ccc";
               removeButton("button3");
+              var p = document.createElement("p");
+              p.innerHTML = sentence;
+              var boxElement = document.getElementById("box");
+              boxElement.placeholder = sentence;
+              box.disabled = true;
             } else {
               result3.innerHTML = "You have typed the sentence '" + sentence + "' " + count + " times. Keep going!";
               result3.style.color = "#00f";
