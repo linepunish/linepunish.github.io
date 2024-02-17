@@ -161,6 +161,10 @@
               result3.style.color = "#000";
               result3.style.fontSize = "x-large";
               result3.style.fontWeight = "bold";
+              var p = document.createElement("p");
+              p.innerHTML = sentence;
+              var boxElement = document.getElementById("box");
+              boxElement.placeholder = sentence;
               box.disabled = true;
               box.style.backgroundColor = "#ccc";
               removeButton("button3");
