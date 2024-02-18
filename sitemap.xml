@@ -3,7 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
         <loc>https://linepunish.github.io/</loc>
-	<lastmod>2024-02-18</lastmod>
+	<lastmod>2024-02-19</lastmod>
 	<changefreq>monthly</changefreq>
 	<xhtml:link rel="alternate" hreflang="ru" href="https://linepunish.github.io/ru/" />
         <xhtml:link rel="alternate" hreflang="bn" href="https://linepunish.github.io/bn/" />
@@ -11,7 +11,7 @@
     </url>
     <url>
         <loc>https://linepunish.github.io/ru/</loc>
-	<lastmod>2024-02-18</lastmod>
+	<lastmod>2024-02-19</lastmod>
 	<changefreq>monthly</changefreq>
 	<xhtml:link rel="alternate" hreflang="en" href="https://linepunish.github.io/" />
 	<xhtml:link rel="alternate" hreflang="bn" href="https://linepunish.github.io/bn/" />
@@ -19,7 +19,7 @@
     </url>
     <url>
         <loc>https://linepunish.github.io/bn/</loc>
-	<lastmod>2024-02-18</lastmod>
+	<lastmod>2024-02-19</lastmod>
 	<changefreq>monthly</changefreq>
 	<xhtml:link rel="alternate" hreflang="en" href="https://linepunish.github.io/" />
 	<xhtml:link rel="alternate" hreflang="ru" href="https://linepunish.github.io/ru/" />
@@ -27,26 +27,26 @@
     </url>
     <url>
         <loc>https://linepunish.github.io/about/</loc>
-	<lastmod>2024-02-18</lastmod>
-	<changefreq>yearly</changefreq>
+	<lastmod>2024-02-19</lastmod>
+	<changefreq>monthly</changefreq>
 	<xhtml:link rel="alternate" hreflang="ru" href="https://linepunish.github.io/ru/about/" />
 	<xhtml:link rel="alternate" hreflang="bn" href="https://linepunish.github.io/bn/about/" />
-        <priority>0.1</priority>
+        <priority>0.5</priority>
     </url>
     <url>
         <loc>https://linepunish.github.io/ru/about/</loc>
-	<lastmod>2024-02-18</lastmod>
-	<changefreq>yearly</changefreq>
+	<lastmod>2024-02-19</lastmod>
+	<changefreq>monthly</changefreq>
 	<xhtml:link rel="alternate" hreflang="en" href="https://linepunish.github.io/about/" />
 	<xhtml:link rel="alternate" hreflang="bn" href="https://linepunish.github.io/bn/about/" />
-        <priority>0.1</priority>
+        <priority>0.5</priority>
     </url>
     <url>
         <loc>https://linepunish.github.io/bn/about/</loc>
-	<lastmod>2024-02-18</lastmod>
-	<changefreq>yearly</changefreq>
+	<lastmod>2024-02-19</lastmod>
+	<changefreq>monthly</changefreq>
 	<xhtml:link rel="alternate" hreflang="en" href="https://linepunish.github.io/about/" />
 	<xhtml:link rel="alternate" hreflang="ru" href="https://linepunish.github.io/ru/about/" />
-        <priority>0.1</priority>
+        <priority>0.5</priority>
     </url>
 </urlset>
