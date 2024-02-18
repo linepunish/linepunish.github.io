@@ -95,6 +95,97 @@
     <br>
     
     <script>
+
+      const array1 = [2, 3, 4, 5, 6, 7, 8, 9];
+
+      function numconvert(n) {
+    if (n < 0)
+      return false;
+	 single_digit = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+	 double_digit = ['ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen']
+	 below_hundred = ['twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety']
+	if (n === 0) return 'zero'
+	function translate(n) {
+		word = ""
+		if (n < 10) {
+			word = single_digit[n] + ' ';
+		}
+		else if (n < 20) {
+			word = double_digit[n - 10] + ' ';
+		}
+		else if (n < 100) {
+      if (((n % 10) != 0))
+			{
+      rem = translate(n % 10);
+			word = below_hundred[(n - n % 10) / 10 - 2] + '-' + rem + ' ';
+		  }
+    else if (((n % 10) == 0))
+     {
+      word = below_hundred[(n - n % 10) / 10 - 2] + ' ';
+     }
+   }
+		else if (n < 1000) {
+      if (n % 100 == 0)
+    {
+			word = single_digit[Math.trunc(n / 100)] + ' hundred' + translate(n % 100);
+		}
+    else
+    {
+			word = single_digit[Math.trunc(n / 100)] + ' hundred and ' + translate(n % 100);
+		}
+  }
+		else if (n < 1000000) {
+      if ((n % 1000 == 0) && (n % 100 == 0) && (n % 100 == 0))
+    {
+			word = translate(parseInt(n / 1000)).trim() + ' thousand ';
+		}
+    else if ((n % 1000 != 0) && (n % 100 == 0) && (n % 10 == 0))
+    {
+			word = translate(parseInt(n / 1000)).trim() + ' thousand ' + translate(n % 1000);
+		}
+    else if ((n % 1000 == 0) && (n % 100 != 0) && (n % 100 == 0))
+    {
+			word = translate(parseInt(n / 1000)).trim() + ' thousand and ' + translate(n % 1000);
+		}
+    else if ((n % 1000 == 0) && (n % 100 == 0) && (n % 100 != 0))
+    {
+			word = translate(parseInt(n / 1000)).trim() + ' thousand and ' + translate(n % 1000);
+		}
+    else if ((n % 1000 != 0) && (n % 100 != 0) && (n % 100 == 0))
+    {
+			word = translate(parseInt(n / 1000)).trim() + ' thousand, ' + translate(n % 1000);
+		}
+    else if ((n % 1000 == 0) && (n % 100 != 0) && (n % 100 != 0))
+    {
+			word = translate(parseInt(n / 1000)).trim() + ' thousand and ' + translate(n % 1000);
+		}
+    else if ((n % 1000 != 0) && (n % 100 == 0) && (n % 100 != 0))
+    {
+			word = translate(parseInt(n / 1000)).trim() + ' thousand, ' + translate(n % 1000);
+		}
+    else if ((n % 1000 != 0) && (n % 100 != 0) && (n % 100 != 0))
+    {
+			word = translate(parseInt(n / 1000)).trim() + ' thousand, ' + translate(n % 1000);
+		}
+    else
+    {
+      word = translate(parseInt(n / 1000)).trim() + ' thousand, ' + translate(n % 1000);
+    }
+  }
+		else if (n < 1000000000) {
+      {
+			word = translate(parseInt(n / 1000000)).trim() + ' million ' + translate(n % 1000000);
+      }
+		}
+		else {
+			word = translate(parseInt(n / 1000000000)).trim() + ' billion ' + translate(n % 1000000000);
+		}
+		return word;
+	}
+	 result = translate(n) ;
+	return result.trim();
+  }
+      
       document.addEventListener("DOMContentLoaded", function() {
         var input = document.getElementById("input");
         var number = document.getElementById("number");
@@ -137,7 +228,7 @@
           }
         }
 
-        function lock3() {
+       function lock3() {
           var sentence = input.value.trim();
           var num = parseInt(number.value.trim());
           var value3 = box.value.trim();
@@ -152,7 +243,22 @@
             count++;
             box.value = "";
             if (count === num) {
-              result3.innerHTML = "Your punishment is over. You have typed the sentence '" + sentence + "' " + count + " times.";
+              if (count === 1)
+              {
+              result3.innerHTML = "Your punishment is over. You have typed the sentence '" + sentence + "' once.";
+              }
+              else if (count === 2)
+              {
+                result3.innerHTML = "Your punishment is over. You have typed the sentence '" + sentence + "' twice.";
+              }
+              else if (count === 3)
+              {
+                result3.innerHTML = "Your punishment is over. You have typed the sentence '" + sentence + "' thrice.";
+              }
+              else 
+              {
+                result3.innerHTML = "Your punishment is over. You have typed the sentence '" + sentence + "' " + numconvert(count) + " times.";
+              }
               result3.style.color = "#000";
               result3.style.fontSize = "x-large";
               result3.style.fontWeight = "bold";
@@ -164,7 +270,18 @@
               boxElement.placeholder = sentence;
               box.disabled = true;
             } else {
-              result3.innerHTML = "You have typed the sentence '" + sentence + "' " + count + " times. Keep going!";
+              if (count === 1) {
+              result3.innerHTML = "You have typed the sentence '" + sentence + "' once. Keep going!";
+              }
+              else if (count === 2) {
+              result3.innerHTML = "You have typed the sentence '" + sentence + "' twice. Keep going!";
+              }
+              else if (count === 3) {
+              result3.innerHTML = "You have typed the sentence '" + sentence + "' thrice. Keep going!";
+              }
+              else {
+              result3.innerHTML = "You have typed the sentence '" + sentence + "' " + numconvert(count) + " times. Keep going!";
+              }
               result3.style.color = "#00f";
               result3.style.fontSize = "x-large";
               result3.style.fontWeight = "bold";
