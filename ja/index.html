@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <title>罰書き</title>
+    <meta name="google" content="notranslate">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="mask-icon" href="../safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="罰として一行書き写しを書かされたことはありますか？このウェブサイトは、シンプルな一行書き込みの罰ツールです。それは、学生に与えられる伝統的な罰をシミュレートしています。">
+    <meta name="keywords" content="書き罰, 文書き罰, 行書き罰, 罰としての行の書き込み, 書き込みの罰, 文の書き込み罰, 行の書き込み罰, 罰の文, タイピングの罰">
+  </head>
+  <body>
+    <div class="header">
+      <nav>
+        <div class="menu">
+          <a id="About" href="https://linepunish.github.io/ja/about/">
+            <b>About Us</b>
+          </a> &nbsp; <div>
+            <button id="Home" onclick="location.href='https://linepunish.github.io/ja/'">
+              <b>Home</b>
+            </button>
+          </div> &nbsp; <div class="dropdown">
+            <button id="Language" class="langbutton">
+              <b>Select Language</b>
+            </button>
+            <div class="dropdown-options">
+              <a href="https://linepunish.github.io/">English</a>
+              <a href="https://linepunish.github.io/ja/">日本語</a>
+              <a href="https://linepunish.github.io/ru/">русский</a>
+              <a href="https://linepunish.github.io/bn/">বাংলা</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <h1>罰書き</h1>
+    <div id="container">
+      <p class="text">罰として繰り返したい文を入力してください。</p>
+      <input id="input" type="text" placeholder="ここに文章を入力してください。" onkeyup="enter1(event1)" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
+      <button id="button1" onclick="lock1()">OK</button>
+      <p id="result1"></p>
+      <p class="text">繰り返したい回数はいくつですか？</p>
+      <input id="number" type="number" placeholder="ここに数字を入力してください。" onkeyup="enter2(event2)" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
+      <button id="button2" onclick="lock2()">OK</button>
+      <p id="result2"></p>
+      <p class="text">指定された回数だけ文を入力してください。</p>
+      <input id="box" type="text" placeholder="ここに入力してください" onkeyup="enter3(event3)" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
+      <button id="button3" onclick="lock3()">エンター</button>
+      <p id="result3"></p>
+    </div>
+    
+    <br><br>
+    
+     <div id="para">
+       
+        <div style="text-align: center;">
+            罰として、行を書かされたことはありますか？罰として、行を書かされたことはありますか？ <br>
+            このウェブサイトは、文を繰り返し書くことによる罰を行うための使いやすいツールです。 <br>
+            学生に与えられる伝統的な罰をシミュレートします <br>
+            文を入力して、その文を入力する必要がある回数を入力し、必要な回数だけその文を繰り返し入力してください。
+          <br>
+        </div>
+    
+        <div style="text-align: center; text-decoration: underline;">
+          <br>
+          指示 
+          <br><br>
+        </div>
+
+        <div style="text-align: left;">
+          1: 最初のボックスに何度も入力する必要がある文を入力して、<b>OK</b>ボタンをクリックします。  <br><br>
+          2: 二番目のボックスに、入力したい回数を入力して、<b>OK</b>ボタンをクリックしてください。.
+         <br><br>
+         3: 指定された回数文をタイプして<b>エンター</b>キーを押すか、<b>エンター</b>ボタンをクリックしてください。タスクを完了した後、ウェブサイトは入力した文の正確な回数を表示します。
+          <br>
+        </div>
+    </div>
+
+    <br>
+    
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var input = document.getElementById("input");
+        var number = document.getElementById("number");
+        var box = document.getElementById("box");
+        var result1 = document.getElementById("result1");
+        var result2 = document.getElementById("result2");
+        var result3 = document.getElementById("result3");
+        var count = 0;
+
+        function lock1() {
+          var value1 = input.value.trim();
+          if (value1 === "") {
+            result1.innerHTML = "文を入力してください！";
+            result1.style.color = "rgb(75, 0, 130)";
+            result1.style.fontWeight = "bold";
+            return;
+          } else {
+            input.disabled = true;
+            input.style.backgroundColor = "#ccc";
+            result1.innerHTML = "";
+            input.focus();
+            removeButton("button1");
+          }
+        }
+
+        function lock2() {
+          var value2 = number.value.trim();
+          if (value2 === "") {
+            result2.innerHTML = "数字を入力してください！";
+            result2.style.color = "rgb(75, 0, 130)";
+            result2.style.fontWeight = "bold";
+            return;
+          } else {
+            number.disabled = true;
+            number.style.backgroundColor = "#ccc";
+            result1.innerHTML = "";
+            result2.innerHTML = "";
+            number.focus();
+            removeButton("button2");
+          }
+        }
+
+        function lock3() {
+          var sentence = input.value.trim();
+          var num = parseInt(number.value.trim());
+          var value3 = box.value.trim();
+          if (value3 === "") {
+            result3.innerHTML = "文を入力してください！";
+            result3.style.color = "rgb(75, 0, 130)";
+            result3.style.fontSize = "x-large";
+            result3.style.fontWeight = "bold";
+            return;
+          }
+          if (value3 === sentence) {
+            count++;
+            box.value = "";
+            if (count === num) {
+              result3.innerHTML = "あなたの罰は終わりました。あなたは 「" + sentence + "」 という文を" + count + "回タイプしました。";
+              result3.style.color = "#000";
+              result3.style.fontSize = "x-large";
+              result3.style.fontWeight = "bold";
+              var p = document.createElement("p");
+              p.innerHTML = sentence;
+              var boxElement = document.getElementById("box");
+              boxElement.placeholder = sentence;
+              box.disabled = true;
+              box.style.backgroundColor = "#ccc";
+              removeButton("button3");
+            } else {
+              result3.innerHTML = "「" + sentence + "」という文を" + count + "回入力しました。続けてください！";
+              result3.style.color = "#00f";
+              result3.style.fontSize = "x-large";
+              result3.style.fontWeight = "bold";
+            }
+          } else {
+            result3.innerHTML = "正しくありません！文をまったくそのままタイプする必要があります。";
+            result3.style.color = "rgb(75, 0, 130)";
+            result3.style.fontSize = "x-large";
+            result3.style.fontWeight = "bold";
+          }
+        }
+
+        function removeButton(id) {
+          var elem = document.getElementById(id);
+          elem.parentNode.removeChild(elem);
+        }
+        document.getElementById("button1").addEventListener("click", lock1);
+        document.getElementById("button2").addEventListener("click", lock2);
+        document.getElementById("button3").addEventListener("click", lock3);
+        input.addEventListener("keyup", function(event) {
+          if (event.key === 'Enter') {
+            lock1();
+          }
+        });
+        number.addEventListener("keyup", function(event) {
+          if (event.key === 'Enter') {
+            lock2();
+          }
+        });
+        box.addEventListener("keyup", function(event) {
+          if (event.key === 'Enter') {
+            lock3();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
