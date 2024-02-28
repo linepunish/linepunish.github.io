@@ -51,8 +51,8 @@
 	<lastmod>2024-02-28</lastmod>
 	<changefreq>monthly</changefreq>
 	<xhtml:link rel="alternate" hreflang="en" href="https://linepunish.github.io/about/" />
-	<xhtml:link rel="alternate" hreflang="bn" href="https://linepunish.github.io/about/bn/" />
 	<xhtml:link rel="alternate" hreflang="ru" href="https://linepunish.github.io/ru/about/" />
+	<xhtml:link rel="alternate" hreflang="bn" href="https://linepunish.github.io/bn/about/" />
         <priority>0.5</priority>
     </url>
     <url>
