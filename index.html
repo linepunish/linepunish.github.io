@@ -35,7 +35,7 @@
             </button>
             <div class="dropdown-options">
               <a href="https://linepunish.github.io/">English</a>
-	      <a href="https://linepunish.github.io/ja/">日本語</a>
+              <a href="https://linepunish.github.io/ja/">日本語</a>
               <a href="https://linepunish.github.io/ru/">русский</a>
               <a href="https://linepunish.github.io/bn/">বাংলা</a>
             </div>
@@ -44,7 +44,6 @@
       </nav>
     </div>
     <h1>Lines Writing Punishment Online</h1>
-    
     <div id="container">
       <p class="text">Type a sentence you want to repeat as punishment:</p>
       <input id="input" type="text" placeholder="Type a sentence here" onkeyup="enter1(event1)" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
@@ -59,37 +58,22 @@
       <button id="button3" onclick="lock3()">Enter</button>
       <p id="result3"></p>
     </div>
-
-    <br><br>
-    
-     <div id="para">
-       
-        <div style="text-align: center;">
-          Have you ever had to write lines as punishment? <br>
-          This website is a simple line typing punishment tool. <br>
-          It simulates a traditional punishment given to students. <br>
-          You have to enter a sentence, enter the number of times you need to type it, and then type that sentence repeatedly for the required number of times.
-          <br>
-        </div>
-    
-        <div style="text-align: center; text-decoration: underline;">
-          <br>
-          INSTRUCTIONS 
-          <br><br>
-        </div>
-
-        <div style="text-align: left;">
-          1: Enter the sentence, which needs to be typed several times, in the first box and click the <b>OK</b> button. <br><br>
-          2: Enter the number of times you want to type it in the second box and click the <b>OK</b> button. <br><br>
-          3: Type that sentence the number of times you have specified and press the <b>Enter</b> key or click the <b>Enter</b> button. After you complete the task, the website will display the exact number of times you have typed the sentence.
-          <br>
-        </div>
-    </div>
-
     <br>
-    
+    <br>
+    <div id="para">
+      <div style="text-align: center;"> Have you ever had to write lines as punishment? <br> This website is a simple line typing punishment tool. <br> It simulates a traditional punishment given to students. <br> You have to enter a sentence, enter the number of times you need to type it, and then type that sentence repeatedly for the required number of times. <br>
+      </div>
+      <div style="text-align: center; text-decoration: underline;">
+        <br> INSTRUCTIONS <br>
+        <br>
+      </div>
+      <div style="text-align: left;"> 1: Enter the sentence, which needs to be typed several times, in the first box and click the <b>OK</b> button. <br>
+        <br> 2: Enter the number of times you want to type it in the second box and click the <b>OK</b> button. <br>
+        <br> 3: Type that sentence the number of times you have specified and press the <b>Enter</b> key or click the <b>Enter</b> button. After you complete the task, the website will display the exact number of times you have typed the sentence. <br>
+      </div>
+    </div>
+    <br>
     <script>
-      
       document.addEventListener("DOMContentLoaded", function() {
         var input = document.getElementById("input");
         var number = document.getElementById("number");
@@ -132,7 +116,7 @@
           }
         }
 
-       function lock3() {
+        function lock3() {
           var sentence = input.value.trim();
           var num = parseInt(number.value.trim());
           var value3 = box.value.trim();
@@ -148,14 +132,12 @@
             box.value = "";
             if (count === num) {
               {
-                if (count === 1)
-                {
-              result3.innerHTML = "Your punishment is over. You have typed the sentence '" + sentence + "' " + count + " time.";
-                }  
-                else {
+                if (count === 1) {
+                  result3.innerHTML = "Your punishment is over. You have typed the sentence '" + sentence + "' " + count + " time.";
+                } else {
                   result3.innerHTML = "Your punishment is over. You have typed the sentence '" + sentence + "' " + count + " times.";
                 }
-            }
+              }
               result3.style.color = "#000";
               result3.style.fontSize = "x-large";
               result3.style.fontWeight = "bold";
@@ -167,17 +149,18 @@
               boxElement.placeholder = sentence;
               box.disabled = true;
             } else {
-              if (count ===1)
-              {
-              result3.innerHTML = "You have typed the sentence '" + sentence + "' " + count + " time. Keep going!";
-              }
-              else {
+              if (count === 1) {
+                result3.innerHTML = "You have typed the sentence '" + sentence + "' " + count + " time. Keep going!";
+                result3.style.color = "#00f";
+                result3.style.fontSize = "x-large";
+                result3.style.fontWeight = "bold";
+              } else {
                 result3.innerHTML = "You have typed the sentence '" + sentence + "' " + count + " times. Keep going!";
+                result3.style.color = "#00f";
+                result3.style.fontSize = "x-large";
+                result3.style.fontWeight = "bold";
               }
-              }
-              result3.style.color = "#00f";
-              result3.style.fontSize = "x-large";
-              result3.style.fontWeight = "bold";
+            }
           } else {
             result3.innerHTML = "Wrong! You have to type the sentence exactly as shown.";
             result3.style.color = "rgb(75, 0, 130)";
