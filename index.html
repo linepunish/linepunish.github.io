@@ -148,8 +148,14 @@
             box.value = "";
             if (count === num) {
               {
-              result3.innerHTML = "Your punishment is over. You have typed the sentence '" + sentence + "' " + count + " times.";
-              }
+                if (count === 1)
+                {
+              result3.innerHTML = "Your punishment is over. You have typed the sentence '" + sentence + "' " + count + " time.";
+                }  
+                else {
+                  result3.innerHTML = "Your punishment is over. You have typed the sentence '" + sentence + "' " + count + " times.";
+                }
+            }
               result3.style.color = "#000";
               result3.style.fontSize = "x-large";
               result3.style.fontWeight = "bold";
@@ -161,7 +167,13 @@
               boxElement.placeholder = sentence;
               box.disabled = true;
             } else {
-              result3.innerHTML = "You have typed the sentence '" + sentence + "' " + count + " times. Keep going!";
+              if (count ===1)
+              {
+              result3.innerHTML = "You have typed the sentence '" + sentence + "' " + count + " time. Keep going!";
+              }
+              else {
+                result3.innerHTML = "You have typed the sentence '" + sentence + "' " + count + " times. Keep going!";
+              }
               }
               result3.style.color = "#00f";
               result3.style.fontSize = "x-large";
