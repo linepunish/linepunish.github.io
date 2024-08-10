@@ -45,10 +45,11 @@
         <loc>https://linepunish.github.io/zh/</loc>
 	<lastmod>2024-08-10</lastmod>
 	<changefreq>monthly</changefreq>
+	<xhtml:link rel="alternate" hreflang="en" href="https://linepunish.github.io/" />
 	<xhtml:link rel="alternate" hreflang="ja" href="https://linepunish.github.io/ja/" />
 	<xhtml:link rel="alternate" hreflang="ru" href="https://linepunish.github.io/ru/" />
         <xhtml:link rel="alternate" hreflang="bn" href="https://linepunish.github.io/bn/" />
-	<xhtml:link rel="alternate" hreflang="zh" href="https://linepunish.github.io/zh/" />
+	
 	<priority>1.0</priority>
     </url>
     <url>
@@ -78,7 +79,7 @@
 	<xhtml:link rel="alternate" hreflang="en" href="https://linepunish.github.io/about/" />
 	<xhtml:link rel="alternate" hreflang="ja" href="https://linepunish.github.io/ja/about/" />
 	<xhtml:link rel="alternate" hreflang="bn" href="https://linepunish.github.io/bn/about/" />
-	<xhtml:link rel="alternate" hreflang="bn" href="https://linepunish.github.io/zh/about/" />
+	<xhtml:link rel="alternate" hreflang="zh" href="https://linepunish.github.io/zh/about/" />
         <priority>0.5</priority>
     </url>
     <url>
@@ -88,7 +89,7 @@
 	<xhtml:link rel="alternate" hreflang="en" href="https://linepunish.github.io/about/" />
 	<xhtml:link rel="alternate" hreflang="ja" href="https://linepunish.github.io/ja/about/" />
 	<xhtml:link rel="alternate" hreflang="ru" href="https://linepunish.github.io/ru/about/" />
-	<xhtml:link rel="alternate" hreflang="ru" href="https://linepunish.github.io/zh/about/" />
+	<xhtml:link rel="alternate" hreflang="zh" href="https://linepunish.github.io/zh/about/" />
         <priority>0.5</priority>
     </url>
 		<url>
