@@ -99,6 +99,6 @@
 	<xhtml:link rel="alternate" hreflang="ja" href="https://linepunish.github.io/about/ja/" />
 	<xhtml:link rel="alternate" hreflang="ru" href="https://linepunish.github.io/about/ru/" />
         <xhtml:link rel="alternate" hreflang="bn" href="https://linepunish.github.io/about/bn/" />
-	<priority>1.0</priority>
+	<priority>0.5</priority>
     </url>
 </urlset>
