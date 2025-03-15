@@ -8,7 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
@@ -19,21 +20,26 @@
     <meta name="keywords" content="line punishment, lines punishment, writing lines as punishment, writing as punishment, line writing punishment, lines typing punishment, lines writing punishment, line typing punishment, lines punish, writing punishment, typing punishment, punishment lines">
     <meta name="google-site-verification" content="google8c12906dc44fd102.html">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9563326566807283"      crossorigin="anonymous"></script>
+
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function(){
+        emailjs.init("U1ZqSEY0oaIua86Jq"); // Replace with your actual EmailJS user ID
+      })();
+    </script>
   </head>
   <body>
     <div class="header">
       <nav>
         <div class="menu">
-          <a id="About" href="https://corner-time.github.io/">
-            <b>Corner-Time</b>
-          </a> &nbsp; <div>
-            <button id="Home" onclick="location.href='https://linepunish.github.io/'">
-              <b>Home</b>
-            </button>
-          </div> &nbsp; <div class="dropdown">
-            <button id="Language" class="langbutton">
-              <b>Language</b>
-            </button>
+          <a id="About" href="https://corner-time.github.io/"><b>Corner-Time</b></a> &nbsp;
+          <div>
+            <button id="Home" onclick="location.href='https://linepunish.github.io/'"><b>Home</b></button>
+          </div> &nbsp;
+          <div class="dropdown">
+            <button id="Language" class="langbutton"><b>Language</b></button>
             <div class="dropdown-options">
               <a href="https://linepunish.github.io/">English</a>
               <a href="https://linepunish.github.io/ja/">日本語</a>
@@ -48,30 +54,34 @@
     <h1>Lines Writing Punishment Online</h1>
     <div id="container">
       <p class="text">Type a sentence you want to repeat as punishment:</p>
-      <input id="input" type="text" placeholder="Type a sentence here" onkeyup="enter1(event1)" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
+      <input id="input" type="text" placeholder="Type a sentence here" onkeyup="enter1(event1)" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete="off">
       <button id="button1" onclick="lock1()">OK</button>
       <p id="result1"></p>
       <p class="text">How many times do you want to repeat it?</p>
-      <input id="number" type="number" placeholder="Type a number here" onkeyup="enter2(event2)" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
+      <input id="number" type="number" placeholder="Type a number here" onkeyup="enter2(event2)" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete="off">
       <button id="button2" onclick="lock2()">OK</button>
       <p id="result2"></p>
       <p class="text">Type the sentence as many times as you specified:</p>
-      <input id="box" type="text" placeholder="Type here" onkeyup="enter3(event3)" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off>
+      <input id="box" type="text" placeholder="Type here" onkeyup="enter3(event3)" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete="off">
       <button id="button3" onclick="lock3()">Enter</button>
       <p id="result3"></p>
     </div>
     <br>
     <br>
     <div id="para">
-      <div style="text-align: center;"> Have you ever had to write lines as punishment? <br> This website is a simple line typing punishment tool. <br> It simulates a traditional punishment given to students. <br> You have to enter a sentence, enter the number of times you need to type it, and then type that sentence repeatedly for the required number of times. <br>
+      <div style="text-align: center;">
+        Have you ever had to write lines as punishment? <br>
+        This website is a simple line typing punishment tool. <br>
+        It simulates a traditional punishment given to students. <br>
+        You have to enter a sentence, enter the number of times you need to type it, and then type that sentence repeatedly for the required number of times. <br>
       </div>
       <div style="text-align: center; text-decoration: underline;">
-        <br> INSTRUCTIONS <br>
-        <br>
+        <br> INSTRUCTIONS <br><br>
       </div>
-      <div style="text-align: left;"> 1: Enter the sentence, which needs to be typed several times, in the first box and click the <b>OK</b> button. <br>
-        <br> 2: Enter the number of times you want to type it in the second box and click the <b>OK</b> button. <br>
-        <br> 3: Type that sentence the number of times you have specified and press the <b>Enter</b> key or click the <b>Enter</b> button. After you complete the task, the website will display the exact number of times you have typed the sentence. <br>
+      <div style="text-align: left;">
+        1: Enter the sentence in the first box and click the <b>OK</b> button. <br><br>
+        2: Enter the number of times in the second box and click the <b>OK</b> button. <br><br>
+        3: Type that sentence the specified number of times and press the <b>Enter</b> key or click the <b>Enter</b> button. After you complete the task, the website will display the count.
       </div>
       Be sure to visit my other website for timeouts in the corner:
       <div><a href="https://corner-time.github.io/">Corner-Time</a></div>
@@ -136,35 +146,42 @@
             count++;
             box.value = "";
             if (count === num) {
-              {
-                if (count === 1) {
-                  result3.innerHTML = "Your punishment is over. You have typed the sentence '" + sentence + "' " + count + " time.";
-                } else {
-                  result3.innerHTML = "Your punishment is over. You have typed the sentence '" + sentence + "' " + count + " times.";
-                }
+              if (count === 1) {
+                result3.innerHTML = "Your punishment is over. You have typed the sentence '" + sentence + "' " + count + " time.";
+              } else {
+                result3.innerHTML = "Your punishment is over. You have typed the sentence '" + sentence + "' " + count + " times.";
               }
               result3.style.color = "#000";
               result3.style.fontSize = "x-large";
               result3.style.fontWeight = "bold";
               box.style.backgroundColor = "#ccc";
               removeButton("button3");
-              var p = document.createElement("p");
-              p.innerHTML = sentence;
-              var boxElement = document.getElementById("box");
-              boxElement.placeholder = sentence;
+              box.placeholder = sentence;
               box.disabled = true;
+              
+              // Prepare parameters for EmailJS
+var templateParams = {
+  sentence: sentence,
+  count: count,
+  to_email: "aishikdutta1000@gmail.com"
+};
+
+              // Send the email
+              emailjs.send('service_saekrsw', 'template_0unpmaj', templateParams)
+                .then(function(response) {
+                   console.log('SUCCESS!', response.status, response.text);
+                }, function(error) {
+                   console.log('FAILED...', error);
+                });
             } else {
               if (count === 1) {
                 result3.innerHTML = "You have typed the sentence '" + sentence + "' " + count + " time. Keep going!";
-                result3.style.color = "#00f";
-                result3.style.fontSize = "x-large";
-                result3.style.fontWeight = "bold";
               } else {
                 result3.innerHTML = "You have typed the sentence '" + sentence + "' " + count + " times. Keep going!";
-                result3.style.color = "#00f";
-                result3.style.fontSize = "x-large";
-                result3.style.fontWeight = "bold";
               }
+              result3.style.color = "#00f";
+              result3.style.fontSize = "x-large";
+              result3.style.fontWeight = "bold";
             }
           } else {
             result3.innerHTML = "Wrong! You have to type the sentence exactly as shown.";
@@ -178,6 +195,7 @@
           var elem = document.getElementById(id);
           elem.parentNode.removeChild(elem);
         }
+
         document.getElementById("button1").addEventListener("click", lock1);
         document.getElementById("button2").addEventListener("click", lock2);
         document.getElementById("button3").addEventListener("click", lock3);
