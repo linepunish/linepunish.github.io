@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Punishment Enforcer</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for the app */
+        body {
+            font-family: 'Comic Sans MS', 'Arial Rounded MT Bold', sans-serif; /* A fun, readable font */
+            background: radial-gradient(circle at top left, #a7f3d0, #bfdbfe, #fbcfe8, #fef08a, #d8b4fe); /* Vibrant radial gradient */
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Center vertically */
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+            color: #333; /* Default text color */
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 35px;
+            border-radius: 25px; /* More rounded corners */
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25), 0 0 0 8px rgba(255, 255, 255, 0.5); /* Bolder, layered shadow with white border */
+            width: 100%;
+            max-width: 750px; /* Slightly wider */
+            text-align: center;
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden; /* For any internal elements that might overflow due to playful design */
+        }
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(45deg, #FFD700, #FF69B4, #8A2BE2, #00BFFF, #32CD32); /* Rainbow border effect */
+            z-index: -1;
+            border-radius: 30px;
+            filter: blur(8px);
+            opacity: 0.7;
+        }
+
+        h1 {
+            font-size: 3.5rem; /* Larger title */
+            font-weight: 900; /* Extra bold */
+            color: transparent;
+            background: linear-gradient(90deg, #ff007f, #ff8c00, #ffea00, #00bfff, #8a2be2); /* Rainbow text gradient */
+            -webkit-background-clip: text;
+            background-clip: text;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2); /* Fun text shadow */
+            margin-bottom: 1.5rem;
+        }
+        p {
+            color: #555;
+            font-size: 1.15rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #8AFFE2, #00BFFF); /* Purple to blue gradient */
+            @apply hover:from-blue-600 hover:to-purple-700 text-white font-extrabold py-3 px-8 rounded-full transition duration-300 ease-in-out shadow-lg transform hover:scale-105 hover:translate-y-[-3px] active:scale-95 active:translate-y-[1px];
+            font-size: 1.2rem;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+        }
+        .btn-secondary {
+            background: linear-gradient(135deg, #FFF9B4, #FFD700); /* Pink to gold gradient */
+            @apply hover:from-yellow-400 hover:to-pink-500 text-gray-800 font-extrabold py-3 px-8 rounded-full transition duration-300 ease-in-out shadow-lg transform hover:scale-105 hover:translate-y-[-3px] active:scale-95 active:translate-y-[1px];
+            font-size: 1.2rem;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+        }
+        .input-field {
+            @apply border-4 border-dashed border-purple-400 p-4 rounded-xl w-full focus:outline-none focus:ring-4 focus:ring-yellow-500 bg-blue-50 text-gray-800 placeholder-gray-500;
+            font-size: 1.1rem;
+        }
+        .punishment-display {
+            min-height: 200px; /* Taller display area */
+            background: linear-gradient(180deg, #e0f7fa, #b2ebf2); /* Light blue gradient */
+            border: 4px solid #81d4fa; /* Solid blue border */
+            border-radius: 18px;
+            padding: 25px;
+            margin-top: 25px;
+            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.1); /* Inner shadow */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            color: #4a4a4a;
+        }
+        /* Message box styling */
+        #message-box {
+            background: linear-gradient(90deg, #ffe0b2, #fff9c4); /* Warm gradient */
+            border: 2px solid #ffcc80; /* Orange border */
+            color: #e65100; /* Dark orange text */
+            padding: 15px;
+            border-radius: 15px;
+            margin-top: 25px;
+            text-align: center;
+            font-size: 1.1em;
+            font-weight: bold;
+            display: none; /* Hidden by default */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Specific element styling for playful look */
+        #typing-input, #count-input {
+            font-family: 'Courier New', monospace; /* Monospaced for typing */
+            letter-spacing: 1px;
+        }
+        #click-button {
+            background: linear-gradient(45deg, #FF007F, #FFD700); /* Pink to Gold */
+            animation: bounce 1s infinite alternate; /* More pronounced bounce */
+        }
+        @keyframes bounce {
+            from { transform: scale(1) translateY(0); }
+            to { transform: scale(1.1) translateY(-10px); }
+        }
+        #target-dot {
+            background: radial-gradient(circle, #32CD32, #008000); /* Green gradient */
+            border: 3px solid #f0f0f0;
+        }
+        #hold-progress div {
+            background: linear-gradient(90deg, #FF69B4, #8A2BE2, #00BFFF, #FFD700); /* Rainbow gradient for progress bar */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            .container {
+                padding: 20px;
+                border-radius: 15px;
+            }
+            .btn-primary, .btn-secondary {
+                font-size: 1rem;
+                padding: 12px 24px;
+            }
+            .punishment-display {
+                min-height: 150px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+    <div class="container bg-white p-8 rounded-xl shadow-lg">
+        <h1 class="text-4xl font-extrabold text-gray-800 mb-6">Digital Punishment Enforcer</h1>
+        <p class="text-gray-600 mb-8">This website is intended for the use of behavior correction of your children or teenagers using your laptop/desktop browser.</p>
+
+        <div class="mb-6">
+            <label for="punishment-select" class="block text-gray-700 text-lg font-semibold mb-2">Pick a Punishment:</label>
+            <select id="punishment-select" class="input-field cursor-pointer py-3" onchange="displayPunishmentInstructions()">
+                <option value="">-- Select Consequence --</option>
+                <option value="typingRepetitions">1. Typing Repetitions</option>
+                <option value="clickEndurance">2. Click Endurance</option>
+                <option value="mouseAccuracyChallenge">3. Mouse Accuracy Drill</option>
+                <option value="reverseCounting">4. Reverse Counting</option>
+                <option value="keyTappingDrill">5. Key Tapping Drill</option>
+                <option value="focusAndHold">6. Focus & Hold</option>
+            </select>
+        </div>
+
+        <div class="mb-6">
+            <label for="severity-slider" class="block text-gray-700 text-lg font-semibold mb-2">Severity of the Consequence: <span id="severity-value" class="text-blue-600">10</span></label>
+            <input type="range" id="severity-slider" min="1" max="100" value="10" class="w-full h-5 bg-blue-200 rounded-lg appearance-none cursor-pointer" oninput="updateSeverity(this.value)">
+            <p class="text-sm text-gray-500 mt-1">1 = For Young Children | 5 = For Most Children | 10 = For Most Teenagers | 20 = For Serious Misbehavior</p>
+<p>"I am Really, Really Sorry" is the button which your child can click if he or she decides to behave, or finds the consequence too harsh, or just wants to say "sorry"! This button cancels your boy's/girl's punishment. Please allow him or her to press this anytime :)</p>
+        </div>
+
+        <!-- Message Box -->
+        <div id="message-box" role="alert"></div>
+
+        <div id="punishment-area" class="punishment-display mb-8">
+            <p id="punishment-instructions" class="text-gray-500">Your mission details will appear here after you choose!</p>
+            <div id="punishment-task" class="mt-4 w-full px-4">
+                <!-- Dynamic punishment content will be loaded here -->
+            </div>
+            <div id="punishment-feedback" class="mt-4 text-green-600 font-semibold"></div>
+            <div id="punishment-progress" class="mt-2 text-gray-600"></div>
+            <div id="timer-display" class="mt-2 text-xl font-bold text-red-500"></div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+            <button id="start-button" class="btn-primary" onclick="startPunishment()" disabled>Start Your Consequence</button>
+            <button id="reset-button" class="btn-secondary" onclick="resetPunishment()">I am Really, Really Sorry!</button>
+        </div>
+    </div>
+
+    <script>
+        // Global variables for punishment state
+        let currentPunishmentType = '';
+        let punishmentState = {};
+        let punishmentTimer = null;
+        let timerInterval = null;
+        let severityLevel = 10; // Default severity
+
+        const startButton = document.getElementById('start-button');
+        const resetButton = document.getElementById('reset-button');
+        const punishmentSelect = document.getElementById('punishment-select');
+        const punishmentInstructions = document.getElementById('punishment-instructions');
+        const punishmentTaskDiv = document.getElementById('punishment-task');
+        const punishmentFeedbackDiv = document.getElementById('punishment-feedback');
+        const punishmentProgressDiv = document.getElementById('punishment-progress');
+        const timerDisplay = document.getElementById('timer-display');
+        const messageBox = document.getElementById('message-box');
+        const severitySlider = document.getElementById('severity-slider');
+        const severityValueSpan = document.getElementById('severity-value');
+
+        // Data for punishments, now with minVal and maxVal for scaling
+        const punishmentsData = {
+            typingRepetitions: {
+                title: "Typing Repetitions",
+                instructions: "Type the given sentence exactly as shown, {value} times. Press Enter after each line.",
+                sentence: "I will not make the mistakes my parents told me to stop making.",
+                param: 'repetitions', // Key to store the calculated value in punishmentState
+                minVal: 10 * 10,  // Base repetitions * 10
+                maxVal: 500 * 10 // Max repetitions * 10
+            },
+            clickEndurance: {
+                title: "Click Endurance",
+                instructions: "Click the button {value} times.",
+                param: 'targetClicks',
+                minVal: 50 * 10,
+                maxVal: 2000 * 10
+            },
+            mouseAccuracyChallenge: {
+                title: "Mouse Accuracy Drill",
+                instructions: "Click the target {value} times as it appears randomly on the screen.",
+                param: 'targetHits',
+                minVal: 15 * 10,
+                maxVal: 500 * 10
+            },
+            reverseCounting: {
+                title: "Reverse Counting",
+                instructions: "Count backwards from {value} to 1. Type the previous number, counting backwards, and press Enter.",
+                param: 'startNumber',
+                minVal: 20 * 10,
+                maxVal: 500 * 10
+            },
+            keyTappingDrill: {
+                title: "Key Tapping Drill",
+                instructions: "Tap the 'SPACEBAR' key {value} times as quickly as possible.",
+                param: 'targetTaps',
+                minVal: 50 * 10,
+                maxVal: 2000 * 10
+            },
+            focusAndHold: {
+                title: "Focus & Hold",
+                instructions: "Press and hold the 'H' key for {value} minutes. Release it only after the timer ends.",
+                param: 'holdDuration', // This will be in minutes for instructions
+                minVal: 1 * 35, // 1 minute * 35
+                maxVal: 20 * 35 // 20 minutes * 35
+            }
+        };
+
+        // Utility function to display messages
+        function displayMessage(text, type = 'info') {
+            messageBox.textContent = text;
+            messageBox.style.display = 'block';
+            messageBox.className = 'mt-4 p-3 rounded-lg text-center font-medium'; // Centered text for messages
+            if (type === 'info') {
+                messageBox.classList.add('bg-blue-100', 'border-blue-300', 'text-blue-800');
+            } else if (type === 'success') {
+                messageBox.classList.add('bg-green-100', 'border-green-300', 'text-green-800');
+            } else if (type === 'error') {
+                messageBox.classList.add('bg-red-100', 'border-red-300', 'text-red-800');
+            }
+            // Hide message after some time (optional, but good for user experience)
+            setTimeout(() => {
+                messageBox.style.display = 'none';
+            }, 5000);
+        }
+
+        /**
+         * Calculates the scaled punishment value based on severity.
+         * @param {number} severity - The current severity level (1-100).
+         * @param {number} minVal - The minimum value for the parameter (at severity 1).
+         * @param {number} maxVal - The maximum value for the parameter (at severity 100).
+         * @returns {number} The calculated punishment parameter value, rounded to nearest integer.
+         */
+        function calculatePunishmentValue(severity, minVal, maxVal) {
+            // Linear interpolation: value = minVal + (range * percentage)
+            // (severity - 1) / 99 scales severity from 1-100 to 0-1
+            const calculatedValue = minVal + (maxVal - minVal) * (severity - 1) / 99;
+            return Math.round(calculatedValue);
+        }
+
+        // Updates the displayed severity value and refreshes instructions
+        function updateSeverity(value) {
+            severityLevel = parseInt(value);
+            severityValueSpan.textContent = severityLevel;
+            displayPunishmentInstructions(); // Refresh instructions with new severity
+        }
+
+        // Function to display instructions and set up initial UI for the selected punishment
+        function displayPunishmentInstructions() {
+            currentPunishmentType = punishmentSelect.value;
+            punishmentTaskDiv.innerHTML = ''; // Clear previous task elements
+            punishmentFeedbackDiv.textContent = '';
+            punishmentProgressDiv.textContent = '';
+            timerDisplay.textContent = '';
+            messageBox.style.display = 'none'; // Hide message box
+
+            if (currentPunishmentType === '') {
+                punishmentInstructions.textContent = "The details of the 'make-up-for-my-mistake' task will appear here.";
+                startButton.disabled = true;
+                return;
+            }
+
+            const data = punishmentsData[currentPunishmentType];
+            let calculatedValue;
+
+            // Determine the parameter to calculate based on the punishment type
+            calculatedValue = calculatePunishmentValue(severityLevel, data.minVal, data.maxVal);
+
+            // Replace {value} placeholder in instructions with the calculated value
+            punishmentInstructions.innerHTML = `<span class="text-xl font-bold text-indigo-700">${data.title}:</span> <br> ${data.instructions.replace('{value}', calculatedValue)}`;
+            startButton.disabled = false;
+        }
+
+        // Main function to start the selected punishment
+        function startPunishment() {
+            if (!currentPunishmentType) {
+                displayMessage("Please select a challenge first!", "error");
+                return;
+            }
+
+            startButton.disabled = true;
+            resetButton.disabled = false;
+            punishmentSelect.disabled = true; // Disable selection during punishment
+            severitySlider.disabled = true; // Disable severity slider during punishment
+            punishmentInstructions.textContent = `Starting ${punishmentsData[currentPunishmentType].title}... Good luck!`;
+            punishmentFeedbackDiv.textContent = '';
+            punishmentProgressDiv.textContent = '';
+            timerDisplay.textContent = '';
+            messageBox.style.display = 'none'; // Hide message box
+
+            // Clear any existing timers/intervals
+            if (timerInterval) {
+                clearInterval(timerInterval);
+                timerInterval = null;
+            }
+            if (punishmentTimer) {
+                clearTimeout(punishmentTimer);
+                punishmentTimer = null;
+            }
+
+            initializePunishmentState();
+            renderPunishmentTask();
+        }
+
+        // Initializes the state for each punishment type
+        function initializePunishmentState() {
+            const data = punishmentsData[currentPunishmentType];
+            let calculatedValue = calculatePunishmentValue(severityLevel, data.minVal, data.maxVal);
+
+            switch (currentPunishmentType) {
+                case 'typingRepetitions':
+                    punishmentState = {
+                        completed: 0,
+                        total: calculatedValue,
+                        sentence: data.sentence
+                    };
+                    break;
+                case 'clickEndurance':
+                    punishmentState = {
+                        clicks: 0,
+                        total: calculatedValue
+                    };
+                    break;
+                case 'mouseAccuracyChallenge':
+                    punishmentState = {
+                        hits: 0,
+                        total: calculatedValue
+                    };
+                    break;
+                case 'reverseCounting':
+                    punishmentState = {
+                        currentNumber: calculatedValue,
+                        total: calculatedValue,
+                        correct: 0
+                    };
+                    break;
+                case 'keyTappingDrill':
+                    punishmentState = {
+                        taps: 0,
+                        total: calculatedValue
+                    };
+                    break;
+                case 'focusAndHold':
+                    punishmentState = {
+                        holding: false,
+                        holdTime: 0,
+                        totalDuration: calculatedValue * 60 // Convert minutes to seconds
+                    };
+                    break;
+            }
+        }
+
+        // Renders the specific UI for each punishment type
+        function renderPunishmentTask() {
+            punishmentTaskDiv.innerHTML = ''; // Clear previous content
+            punishmentFeedbackDiv.textContent = '';
+            punishmentProgressDiv.textContent = '';
+            timerDisplay.textContent = '';
+
+            switch (currentPunishmentType) {
+                case 'typingRepetitions':
+                    punishmentTaskDiv.innerHTML = `
+                        <p class="text-xl font-mono mb-4 text-blue-700">${punishmentState.sentence}</p>
+                        <input type="text" id="typing-input" class="input-field" placeholder="Type the sentence here..." onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete="off">
+                    `;
+                    const typingInput = document.getElementById('typing-input');
+                    typingInput.addEventListener('keydown', (e) => {
+                        if (e.key === 'Enter') checkCompletion(typingInput);
+                    });
+                    typingInput.focus();
+                    punishmentProgressDiv.textContent = `Lines completed: ${punishmentState.completed} / ${punishmentState.total}`;
+                    break;
+                case 'clickEndurance':
+                    punishmentTaskDiv.innerHTML = `
+                        <button id="click-button" class="btn-primary text-2xl px-10 py-5 rounded-full animate-bounce">CLICK ME!</button>
+                    `;
+                    document.getElementById('click-button').addEventListener('click', () => checkCompletion());
+                    punishmentProgressDiv.textContent = `Clicks: ${punishmentState.clicks} / ${punishmentState.total}`;
+                    break;
+                case 'mouseAccuracyChallenge':
+                    punishmentTaskDiv.innerHTML = `
+                        <div id="target-area" class="relative w-full h-64 border-4 border-dashed border-pink-400 rounded-xl overflow-hidden flex items-center justify-center bg-white">
+                            <div id="target-dot" class="absolute bg-green-500 w-10 h-10 rounded-full cursor-pointer transition-all duration-100 ease-out transform scale-100 hover:scale-110 shadow-lg animate-pulse"></div>
+                        </div>
+                    `;
+                    const targetDot = document.getElementById('target-dot');
+                    const targetArea = document.getElementById('target-area');
+                    targetDot.addEventListener('click', (e) => {
+                        e.stopPropagation(); // Prevent click on parent
+                        checkCompletion();
+                    });
+                    // Initial position for the target
+                    moveTargetDot(targetDot, targetArea);
+                    punishmentProgressDiv.textContent = `Hits: ${punishmentState.hits} / ${punishmentState.total}`;
+                    break;
+                case 'reverseCounting':
+                    punishmentTaskDiv.innerHTML = `
+                        <p class="text-4xl font-extrabold mb-4 text-purple-700">${punishmentState.currentNumber}</p>
+                        <input type="text" id="count-input" class="input-field" placeholder="Previous number..." autocomplete="off">
+                    `;
+                    const countInput = document.getElementById('count-input');
+                    countInput.addEventListener('keydown', (e) => {
+                        if (e.key === 'Enter') checkCompletion(countInput);
+                    });
+                    countInput.focus();
+                    punishmentProgressDiv.textContent = `Remaining: ${punishmentState.currentNumber - 1}`;
+                    break;
+                case 'keyTappingDrill':
+                    punishmentTaskDiv.innerHTML = `
+                        <p class="text-2xl font-bold mb-4 text-orange-700">Tap the <span class="text-blue-600 font-extrabold">'SPACEBAR'</span> key!</p>
+                        <div class="text-6xl font-extrabold text-teal-600 animate-pulse" id="tap-count">0</div>
+                    `;
+                    document.addEventListener('keydown', handleKeyTapping);
+                    punishmentProgressDiv.textContent = `Taps: ${punishmentState.taps} / ${punishmentState.total}`;
+                    break;
+                case 'focusAndHold':
+                    const minutesTotal = Math.round(punishmentState.totalDuration / 60); // Display in minutes
+                    punishmentTaskDiv.innerHTML = `
+                        <p class="text-2xl font-bold mb-4 text-red-600">Press and HOLD the <span class="text-blue-600 font-extrabold">'H'</span> key!</p>
+                        <div id="hold-progress" class="w-full bg-gray-200 rounded-full h-6 border-2 border-yellow-400">
+                            <div class="bg-blue-500 h-full rounded-full transition-all duration-100 ease-linear" style="width: 0%;"></div>
+                        </div>
+                    `;
+                    document.addEventListener('keydown', handleFocusHoldKeyDown);
+                    document.addEventListener('keyup', handleFocusHoldKeyUp);
+                    timerDisplay.textContent = `Hold Time: 0s / ${minutesTotal}m`;
+                    break;
+            }
+        }
+
+        // Checks for completion of a single step within a punishment
+        function checkCompletion(inputElement = null) {
+            let isCorrect = false;
+            let feedbackText = '';
+
+            switch (currentPunishmentType) {
+                case 'typingRepetitions':
+                    if (inputElement.value.trim() === punishmentState.sentence) {
+                        punishmentState.completed++;
+                        feedbackText = 'Great job!';
+                        isCorrect = true;
+                    } else {
+                        feedbackText = 'Oops! Try again.';
+                    }
+                    punishmentFeedbackDiv.textContent = feedbackText;
+                    inputElement.value = ''; // Clear input
+                    inputElement.focus();
+                    punishmentProgressDiv.textContent = `Lines completed: ${punishmentState.completed} / ${punishmentState.total}`;
+                    if (punishmentState.completed >= punishmentState.total) {
+                        completePunishment();
+                    }
+                    break;
+                case 'clickEndurance':
+                    punishmentState.clicks++;
+                    punishmentFeedbackDiv.textContent = 'Boing!';
+                    punishmentProgressDiv.textContent = `Clicks: ${punishmentState.clicks} / ${punishmentState.total}`;
+                    if (punishmentState.clicks >= punishmentState.total) {
+                        completePunishment();
+                    }
+                    break;
+                case 'mouseAccuracyChallenge':
+                    punishmentState.hits++;
+                    punishmentFeedbackDiv.textContent = 'Zap!';
+                    punishmentProgressDiv.textContent = `Hits: ${punishmentState.hits} / ${punishmentState.total}`;
+                    if (punishmentState.hits >= punishmentState.total) {
+                        completePunishment();
+                    } else {
+                        // Move target to a new random position
+                        const targetDot = document.getElementById('target-dot');
+                        const targetArea = document.getElementById('target-area');
+                        moveTargetDot(targetDot, targetArea);
+                    }
+                    break;
+                case 'reverseCounting':
+                    const expected = punishmentState.currentNumber - 1;
+                    if (parseInt(inputElement.value.trim()) === expected) {
+                        punishmentState.currentNumber = expected;
+                        feedbackText = 'Fantastic!';
+                        isCorrect = true;
+                    } else {
+                        feedbackText = `Nope! Next should be ${expected}.`;
+                    }
+                    punishmentFeedbackDiv.textContent = feedbackText;
+                    inputElement.value = '';
+                    inputElement.focus();
+                    punishmentProgressDiv.textContent = `Remaining: ${punishmentState.currentNumber - 1}`;
+                    if (punishmentState.currentNumber <= 1) { // Count down to 1
+                        completePunishment();
+                    } else {
+                        renderPunishmentTask(); // Update displayed number
+                    }
+                    break;
+                case 'keyTappingDrill':
+                    // This function is called by the keydown event listener directly
+                    // Input element is not directly used here
+                    break;
+                case 'focusAndHold':
+                    // This is handled by keydown/keyup listeners and a timer
+                    break;
+            }
+        }
+
+        // Handles key presses for Key Tapping Drill
+        function handleKeyTapping(e) {
+            if (currentPunishmentType === 'keyTappingDrill' && e.key === ' ') {
+                punishmentState.taps++;
+                document.getElementById('tap-count').textContent = punishmentState.taps;
+                punishmentProgressDiv.textContent = `Taps: ${punishmentState.taps} / ${punishmentState.total}`;
+                if (punishmentState.taps >= punishmentState.total) {
+                    completePunishment();
+                    document.removeEventListener('keydown', handleKeyTapping);
+                }
+            }
+        }
+
+        // Handles key down for Focus & Hold
+        function handleFocusHoldKeyDown(e) {
+            if (currentPunishmentType === 'focusAndHold' && e.key === 'h' && !punishmentState.holding) {
+                punishmentState.holding = true;
+                punishmentState.holdTime = 0;
+                punishmentState.startTime = Date.now();
+                document.getElementById('hold-progress').children[0].style.width = '0%';
+                timerInterval = setInterval(() => {
+                    if (punishmentState.holding) {
+                        const elapsed = Math.floor((Date.now() - punishmentState.startTime) / 1000);
+                        punishmentState.holdTime = elapsed;
+                        const minutesTotal = Math.round(punishmentState.totalDuration / 60);
+                        timerDisplay.textContent = `Hold Time: ${elapsed}s / ${minutesTotal}m`;
+                        const progressWidth = (punishmentState.holdTime / punishmentState.totalDuration) * 100;
+                        document.getElementById('hold-progress').children[0].style.width = `${Math.min(progressWidth, 100)}%`;
+
+                        if (punishmentState.holdTime >= punishmentState.totalDuration) {
+                            clearInterval(timerInterval);
+                            timerInterval = null;
+                            punishmentState.holding = false;
+                            punishmentFeedbackDiv.textContent = 'Hold successful!';
+                            completePunishment();
+                            document.removeEventListener('keydown', handleFocusHoldKeyDown);
+                            document.removeEventListener('keyup', handleFocusHoldKeyUp);
+                        }
+                    }
+                }, 100); // Check more frequently for smooth progress bar
+            }
+        }
+
+        // Handles key up for Focus & Hold
+        function handleFocusHoldKeyUp(e) {
+            if (currentPunishmentType === 'focusAndHold' && e.key === 'h' && punishmentState.holding) {
+                clearInterval(timerInterval);
+                timerInterval = null;
+                punishmentState.holding = false;
+                if (punishmentState.holdTime < punishmentState.totalDuration) {
+                    const minutesTotal = Math.round(punishmentState.totalDuration / 60);
+                    punishmentFeedbackDiv.textContent = `Hold failed! Held for ${punishmentState.holdTime}s. Try again.`;
+                    timerDisplay.textContent = `Hold Time: 0s / ${minutesTotal}m`;
+                    document.getElementById('hold-progress').children[0].style.width = '0%';
+                    // Reset to allow another attempt
+                    startButton.disabled = false;
+                    punishmentSelect.disabled = false;
+                    severitySlider.disabled = false;
+                }
+            }
+        }
+
+        // Moves the target dot randomly within the target area
+        function moveTargetDot(dot, area) {
+            const areaRect = area.getBoundingClientRect();
+            const dotRect = dot.getBoundingClientRect();
+
+            const maxX = areaRect.width - dotRect.width - 20; // Add padding to prevent going too close to edge
+            const maxY = areaRect.height - dotRect.height - 20; // Add padding
+
+            const newX = 10 + Math.random() * (maxX - 10);
+            const newY = 10 + Math.random() * (maxY - 10);
+
+            dot.style.left = `${newX}px`;
+            dot.style.top = `${newY}px`;
+        }
+
+        // Function to call when a punishment is fully completed
+        function completePunishment(finalMessage = "Challenge completed successfully! You did it!") {
+            punishmentFeedbackDiv.textContent = finalMessage;
+            displayMessage(finalMessage, "success");
+            startButton.disabled = false; // Allow restarting or choosing new punishment
+            punishmentSelect.disabled = false; // Enable punishment selection
+            severitySlider.disabled = false; // Enable severity slider
+            // Clear any active timers
+            if (timerInterval) {
+                clearInterval(timerInterval);
+                timerInterval = null;
+            }
+            if (punishmentTimer) {
+                clearTimeout(punishmentTimer);
+                punishmentTimer = null;
+            }
+            // Remove specific event listeners if they were added dynamically
+            document.removeEventListener('keydown', handleKeyTapping);
+            document.removeEventListener('keydown', handleFocusHoldKeyDown);
+            document.removeEventListener('keyup', handleFocusHoldKeyUp);
+        }
+
+        // Resets the entire punishment interface
+        function resetPunishment() {
+            // Clear any active timers
+            if (timerInterval) {
+                clearInterval(timerInterval);
+                timerInterval = null;
+            }
+            if (punishmentTimer) {
+                clearTimeout(punishmentTimer);
+                punishmentTimer = null;
+            }
+
+            currentPunishmentType = '';
+            punishmentState = {};
+            punishmentSelect.value = '';
+            punishmentSelect.disabled = false;
+            severitySlider.disabled = false; // Ensure slider is enabled on reset
+            punishmentInstructions.textContent = "The details of the 'make-up-for-my-mistake' task will appear here.";
+            punishmentTaskDiv.innerHTML = '';
+            punishmentFeedbackDiv.textContent = '';
+            punishmentProgressDiv.textContent = '';
+            timerDisplay.textContent = '';
+            messageBox.style.display = 'none'; // Hide message box
+
+            startButton.disabled = true; // Disable start button until a new punishment is selected
+            resetButton.disabled = false; // Keep reset button enabled
+            displayMessage("Just Don't Make that Mistake Again. Be a nice person! :)", "info");
+
+            // Remove any dynamically added global event listeners
+            document.removeEventListener('keydown', handleKeyTapping);
+            document.removeEventListener('keydown', handleFocusHoldKeyDown);
+            document.removeEventListener('keyup', handleFocusHoldKeyUp);
+        }
+
+        // Initial setup on page load
+        window.onload = () => {
+            severityValueSpan.textContent = severitySlider.value; // Set initial value for slider text
+            displayPunishmentInstructions(); // Set initial instructions
+        };
+
+    </script>
+</body>
+</html>
