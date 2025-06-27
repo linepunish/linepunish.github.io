@@ -102,4 +102,12 @@
         <xhtml:link rel="alternate" hreflang="bn" href="https://linepunish.github.io/about/bn/" />
 	<priority>0.5</priority>
     </url>
+
+	<url>
+        <loc>https://linepunish.github.io/punishment-enforcer/</loc>
+	<lastmod>2025-06-27</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>1.0</priority>
+    </url>
+	
 </urlset>
